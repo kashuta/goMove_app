@@ -2,8 +2,8 @@ import React, {useEffect, useState } from 'react';
 import { AppBar, Avatar, Box, Button, InputBase, Menu, MenuItem, styled, Toolbar, Typography} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import logoSvg from '../../images/logo.svg'
+import { useDispatch, useSelector } from 'react-redux';
+import logoSvg from '../../images/logo_transparent.png'
 
 const StyledToolbar = styled(Toolbar)({
     display:"flex",
@@ -23,6 +23,7 @@ const Icons = styled(Box)(({ theme }) => ({
 }));
 
 const NavBar = () => {
+    const user = useSelector(state=> state.user)
     const [open, setOpen] = useState(false)
     const [findCity, setFindCity] = useState("")
     const [copy, setCopy] = useState([])
@@ -58,34 +59,50 @@ const NavBar = () => {
                 </form>
                 <Icons>
                     {/* Тут прописать условие авторизации пользователя */}
-                    <Link to='/registration' style={{ textDecoration: 'none' }}>
+                    {user? 
+                    <>
+                    <Avatar sx={{width:35, height:35}} src='#'/>
+                        <MenuIcon onClick={(e) => setOpen(true)} />
+                        <Menu
+                            id="demo-positioned-menu"
+                            aria-labelledby="demo-positioned-button"
+                            open={open}
+                            onClose={(e) => setOpen(false)}
+                            anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                            }}
+                            transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                            }}
+                        >
+                            <MenuItem >Profile</MenuItem>
+                            <MenuItem >My account</MenuItem>
+                            <MenuItem >Logout</MenuItem>
+                        </Menu>
+                    </>
+                         : 
+                         <>
+                         <Link to='/registration' style={{ textDecoration: 'none' }}>
+                            <Button variant="outlined" sx={{color: 'white', backgroundColor: '#FFB703'}}>Sign Up</Button>
+                            </Link>
+                            <Link to='/auth' style={{ textDecoration: 'none' }}>
+                            <Button sx={{color: "white"}}>Sign In</Button>
+                        </Link>
+                         </>
+                         
+                    }
+                    {/* <Link to='/registration' style={{ textDecoration: 'none' }}>
                       <Button variant="outlined" sx={{color: 'white', backgroundColor: '#FFB703'}}>Sign Up</Button>
                     </Link>
                     <Link to='/auth' style={{ textDecoration: 'none' }}>
-                      <Button variant="outlined" sx={{color: "white"}}>Sign In</Button>
+                      <Button sx={{color: "white"}}>Sign In</Button>
                   </Link>
                     <Avatar sx={{width:35, height:35}} src='#'/>
-                    <MenuIcon onClick={(e) => setOpen(true)} />
+                    <MenuIcon onClick={(e) => setOpen(true)} /> */}
                 </Icons>
             </StyledToolbar>
-            <Menu
-                id="demo-positioned-menu"
-                aria-labelledby="demo-positioned-button"
-                open={open}
-                onClose={(e) => setOpen(false)}
-                anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-                }}
-                transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-                }}
-            >
-                <MenuItem >Profile</MenuItem>
-                <MenuItem >My account</MenuItem>
-                <MenuItem >Logout</MenuItem>
-            </Menu>
         </AppBar>
     )
 }

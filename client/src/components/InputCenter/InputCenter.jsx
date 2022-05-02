@@ -1,7 +1,7 @@
 import {Autocomplete, Button, TextField} from '@mui/material'
 import React, {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getPriceFromDB} from '../../redux/actions/thunk/thunkPrice'
+import {getPriceFromDB} from '../../redux/thunk/thunkPrice'
 
 function InputCenter(e) {
 
