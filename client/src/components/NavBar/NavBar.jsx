@@ -3,6 +3,7 @@ import { AppBar, Avatar, Box, Button, InputBase, Menu, MenuItem, styled, Toolbar
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import logoSvg from '../../images/logo.svg'
 
 const StyledToolbar = styled(Toolbar)({
     display:"flex",
@@ -13,7 +14,7 @@ const Search = styled("div")(({ theme }) => ({
     backgroundColor: "white",
     padding: "0 10px",
     borderRadius: theme.shape.borderRadius,
-    width: "15%",
+    width: "75%",
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
@@ -41,26 +42,28 @@ const NavBar = () => {
     }
 
     return (
-        <AppBar position='sticky'>
-            <StyledToolbar>
+        <AppBar position='sticky' sx={{backgroundColor: '#023047'}}>
+            <StyledToolbar >
                 <Typography variant='h6'>
-                    <Link to='/' >
-                        Go Move
+                    <Link to='/' style={{ textDecoration: 'none', color: 'white'}}>
+                        <img src={logoSvg} style={{height: 50, marginTop: 10}} alt="SVG as an image" />
                     </Link>
                 </Typography>
                 <form onSubmit={(e) => submitHandler(e.target.value )}>
 
-                <Search><InputBase placeholder='Search' value={findCity}></InputBase></Search>
+                <Search>
+                    <InputBase placeholder='Search' value={findCity}></InputBase>
+                </Search>
                 <button type='submit'> найти</button>
                 </form>
                 <Icons>
                     {/* Тут прописать условие авторизации пользователя */}
-                    <Button variant="contained">
-                        <Link to='/registration'>Register</Link>
-                    </Button>
-                    <Link to='/auth'>
-                        <Button variant="outlined" sx={{color: "white"}}>Войти</Button>
+                    <Link to='/registration' style={{ textDecoration: 'none' }}>
+                      <Button variant="outlined" sx={{color: 'white', backgroundColor: '#FFB703'}}>Sign Up</Button>
                     </Link>
+                    <Link to='/auth' style={{ textDecoration: 'none' }}>
+                      <Button variant="outlined" sx={{color: "white"}}>Sign In</Button>
+                  </Link>
                     <Avatar sx={{width:35, height:35}} src='#'/>
                     <MenuIcon onClick={(e) => setOpen(true)} />
                 </Icons>
