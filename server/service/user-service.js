@@ -3,6 +3,7 @@ const uuid = require('uuid');
 const {User} = require('../db/models');
 const mailService = require('./mail-service');
 const tokenService = require('./token-service');
+const fileService = require('./file-service');
 const ApiError = require('../exceptions/api-errors');
 
 class UserService {
@@ -85,7 +86,6 @@ class UserService {
             throw ApiError.UnauthorizedError(401, 'Refresh token is required');
         }
         const userData = await tokenService.validateRefreshToken(refreshToken);
-        console.log('+++++++++++', userData);
 
         const tokenFromDb = await tokenService.findToken(refreshToken);
         if (!userData || !tokenFromDb) {
@@ -109,6 +109,17 @@ class UserService {
         if (!user) {
             throw ApiError.badRequestError('Users not found');
         }
+        return user;
+    }
+
+    async uploadUserAvatar(userId, file) {
+        const user = await User.findOne({where: {id: userId}});
+        if (!user) {
+            throw ApiError.badRequestError('User not found');
+        }
+        const fileName = await fileService.uploadFile(file);
+        user.avatar = fileName;
+        await user.save();
         return user;
     }
 }

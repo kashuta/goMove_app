@@ -24,7 +24,6 @@ class UserController {
     async login(req, res, next) {
         try {
             const {email, password} = req.body;
-            console.log("++++++++++++++", email, password);
             const userData = await userService.login(email, password);
             res.cookie('refreshToken', userData.refreshToken, {
                 httpOnly: true,
@@ -75,6 +74,20 @@ class UserController {
         try {
             const users = await userService.getUsers();
             return res.json(users);
+        } catch (err) {
+            next(err);
+        }
+    }
+
+    async uploadUserAvatar(req, res, next) {
+        try {
+            const {refreshToken} = req.cookies;
+            const userData = await userService.uploadUserAvatar(refreshToken, req.file);
+            res.cookie('refreshToken', userData.refreshToken, {
+                httpOnly: true,
+                maxAge: 1000 * 60 * 60 * 24 * 30,
+            });
+            return res.json(userData);
         } catch (err) {
             next(err);
         }

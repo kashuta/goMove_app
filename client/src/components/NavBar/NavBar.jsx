@@ -2,8 +2,8 @@ import React, {useEffect, useState } from 'react';
 import { AppBar, Avatar, Box, Button, InputBase, Menu, MenuItem, styled, Toolbar, Typography} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import logoSvg from '../../images/logo_transparent.png'
+import { useDispatch } from 'react-redux';
+import logoSvg from '../../images/logo.svg'
 
 const StyledToolbar = styled(Toolbar)({
     display:"flex",
@@ -59,8 +59,12 @@ const NavBar = () => {
                 </form>
                 <Icons>
                     {/* Тут прописать условие авторизации пользователя */}
-                    {user? 
-                    <>
+                    <Link to='/registration' style={{ textDecoration: 'none' }}>
+                      <Button variant="outlined" sx={{color: 'white', backgroundColor: '#FFB703'}}>Sign Up</Button>
+                    </Link>
+                    <Link to='/auth' style={{ textDecoration: 'none' }}>
+                      <Button variant="outlined" sx={{color: "white"}}>Sign In</Button>
+                  </Link>
                     <Avatar sx={{width:35, height:35}} src='#'/>
                         <MenuIcon onClick={(e) => setOpen(true)} />
                         <Menu
