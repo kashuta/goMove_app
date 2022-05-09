@@ -9,16 +9,11 @@ import Grid from "@mui/material/Grid";
 import Chart from '../Chart/Chart'
 
 import backgroundImg from '../../images/background.jpg'
-<<<<<<< HEAD
-import Chart2 from '../thirdChart/thirdChart'
-import Currency from '../Currency/Currency'
-=======
 import Currency from "../Currency/Currency";
 import Header from "../Header/Header";
 import Chart2 from "../Chart2/Chart2";
 import Chart3 from "../Chart3/Chart3";
 import Chart4 from "../Chart4/Chart4";
->>>>>>> 1d9268dd3239d396d94f86e726674e5c58008027
 
 const divStyle = {
     height: '100vh',
