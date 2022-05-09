@@ -11,8 +11,7 @@ import Chart1 from '../SecondChart/SecondChart'
 
 import backgroundImg from '../../images/background.jpg'
 import Chart2 from '../thirdChart/thirdChart'
-import Currency from "../Currency/Currency";
-import Header from "../Header/Header";
+import Currency from '../Currency/Currency'
 
 const divStyle = {
     height: '100vh',
@@ -40,7 +39,6 @@ function Home() {
     return (
         <>
             <div style={divStyle}>
-                    <Header/>
                 <div className='input-wrapper' style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -48,7 +46,7 @@ function Home() {
                     textAlign: 'center',
                     width: '100%'
                 }}>
-                    <div style={{display: 'flex', justifyContent: 'center', marginTop: '30vh'}}>
+                    <div style={{display: 'flex', justifyContent: 'center', marginTop: '25vh'}}>
                         <InputCenter/>
                     </div>
                 </div>
@@ -69,16 +67,16 @@ function Home() {
                     </Grid>
                 </Grid>
 
-                {chart
-                    &&
-                    <>
-                        <Currency/>
-                        <Chart/>
-                        <Chart1/>
-                        <Chart2/>
-                    </>
-                }
-            </div>
+            {chart
+            &&
+            <>
+            <Currency/>
+            <Chart/>
+            <Chart1/>
+            <Chart2/>
+            </>
+            }
+        </div>
         </>
 
     )
