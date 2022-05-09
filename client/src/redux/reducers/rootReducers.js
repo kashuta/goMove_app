@@ -4,6 +4,7 @@ import { currencyPriceReducer, currencyPriceReducer2 } from './currencyPriceRedu
 import { currencyReducer } from './currencyReducer';
 import { lineFrontCityReducer } from './lineFrontCityReducer';
 import { priceReducer, priceReducer2 } from './priceReducer'
+import { setCurrencyReducer } from './setCurrencyReducer';
 import {userReducer} from "./userReducer";
 
 
@@ -16,6 +17,7 @@ export const rootReducer = combineReducers({
   lineFrontCity: lineFrontCityReducer,
   currencyPrice: currencyPriceReducer ,
   currencyPrice2: currencyPriceReducer2,
+  currentCurrency: setCurrencyReducer,
 
 
 })

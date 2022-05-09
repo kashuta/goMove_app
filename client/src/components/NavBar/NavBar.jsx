@@ -1,33 +1,30 @@
-import React, {useEffect, useState } from 'react';
-import { AppBar, Avatar, Box, Button, InputBase, Menu, MenuItem, styled, Toolbar, Typography} from '@mui/material'
+import React, {useEffect, useState} from 'react';
+import {AppBar, Avatar, Box, Button, Menu, MenuItem, styled, Toolbar, Typography} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import logoSvg from '../../images/logo_transparent.png'
-import Currency from '../Currency/Currency';
 import {THUNK_ACTION_LOGOUT} from "../../redux/thunk/thunkAuth";
-import { getUserData } from '../../redux/thunk/thunkProfile';
 
 const StyledToolbar = styled(Toolbar)({
-    display:"flex",
-    justifyContent:"space-between"
+    display: "flex",
+    justifyContent: "space-between"
 })
 
-const Search = styled("div")(({ theme }) => ({
+const Search = styled("div")(({theme}) => ({
     backgroundColor: "white",
     padding: "0 10px",
     borderRadius: theme.shape.borderRadius,
     width: "75%",
 }));
 
-const Icons = styled(Box)(({ theme }) => ({
+const Icons = styled(Box)(({theme}) => ({
     display: "flex",
     gap: "20px"
 }));
 
 const NavBar = () => {
-    const user = useSelector(state=> state.user)
-    console.log('user', user);
+    const user = useSelector(state => state.user)
     const [open, setOpen] = useState(false)
     const [findCity, setFindCity] = useState("")
     const [copy, setCopy] = useState([])
@@ -35,23 +32,23 @@ const NavBar = () => {
     const dispatch = useDispatch()
 
 
-    useEffect(()=> {
-      setCopy(findCity)  // create  new copy
+    useEffect(() => {
+        setCopy(findCity)  // create  new copy
     }, [findCity])
 
     const submitHandler = (e) => {
-    e.preventDefault()
+        e.preventDefault()
 
-    dispatch()
+        dispatch()
 
     }
 
     return (
         <AppBar position='sticky' sx={{backgroundColor: '#023047'}} elevation={0}>
-            <StyledToolbar >
+            <StyledToolbar>
                 <Typography variant='h6'>
-                    <Link to='/' style={{ textDecoration: 'none', color: 'white'}}>
-                        <img src={logoSvg} style={{height: 50, marginTop: 10}} alt="SVG as an image" />
+                    <Link to='/' style={{textDecoration: 'none', color: 'white'}}>
+                        <img src={logoSvg} style={{height: 50, marginTop: 10}} alt="SVG as an image"/>
                     </Link>
                 </Typography>
                 {/* <form onSubmit={(e) => submitHandler(e.target.value )}>
@@ -82,7 +79,7 @@ const NavBar = () => {
                                 }}
                             >
                                 <MenuItem>
-                                    <Link to='/userprofile' style={{ textDecoration: 'none' }}>Profile</Link>
+                                    <Link to='/userprofile' style={{textDecoration: 'none'}}>Profile</Link>
                                 </MenuItem>
                                 <MenuItem
                                     onClick={() => (dispatch(THUNK_ACTION_LOGOUT()))}

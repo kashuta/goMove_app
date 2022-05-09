@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getCurrencyFromDB } from '../../redux/thunk/thunkCurrency'
 import { useEffect } from 'react'
 import { getCurrencyPrice, getCurrencyPrice2 } from '../../redux/actions/currencyPriceAction'
+import { setCurrency } from '../../redux/actions/currencyAction'
 
 function Currency() {
 
@@ -29,6 +30,7 @@ const searchHandler = (e) => {
   
   dispatch(getCurrencyPrice(currencyPrice))
   dispatch(getCurrencyPrice2(currencyPrice2))
+  dispatch(setCurrency(e.target.value))
 } 
   return (
     <>

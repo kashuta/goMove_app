@@ -2,6 +2,8 @@ export const GET_PRICE = 'GET_PRICE'
 export const GET_PRICE2 = 'GET_PRICE2'
 export const GET_PRICE_CURRENCY = 'GET_PRICE_CURRENCY'
 export const GET_PRICE_CURRENCY2 = 'GET_PRICE_CURRENCY2'
+export const SET_CURRENCY = 'SET_CURRENCY'
+
 
 
 

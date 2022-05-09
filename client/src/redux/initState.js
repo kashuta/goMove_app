@@ -7,6 +7,7 @@ export const initState = {
     lineFrontCity: {},
     currencyPrice: [],
     currencyPrice2: [],
+    currentCurrency: 'USD',
 
 
 }
