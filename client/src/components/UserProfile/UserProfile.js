@@ -4,21 +4,20 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import './UserProfile.css'
 import { getUserData, updateUser } from "../../redux/thunk/thunkProfile";
+import { getHistoryFromDB } from "../../redux/thunk/thunkHistory";
 
 const theme = createTheme();
 
 function UserProfile() {
+    const favorite = useSelector(state => state.history)
     const id = useSelector(state => state.user.id);
     const dispatch = useDispatch();
-    // const [name, setName] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
     const userData = useSelector((store) => store.user);
-    // const [userData, setUserData] = useState({});
-    const [inputs, setInputs] = useState({...userData});
-
+    const [inputs, setInputs] = useState({ ...userData });
+ 
     useEffect(() => {
-        dispatch(getUserData(id));
+      dispatch(getUserData(id));
+      dispatch(getHistoryFromDB())
     }, []);
     
   const handleChange = (e) => {
@@ -37,19 +36,6 @@ function UserProfile() {
     e.preventDefault();
     dispatch(updateUser(inputs, id))
     }
-    //   const formData = new FormData();
-    //   formData.append('file', inputs.file ?? inputs.photo);
-    //   formData.append('userId', inputs.id);
-    //   formData.append('name', inputs.name);
-    //   formData.append('email', inputs.email);
-    //   fetch(`http://localhost:5001/api/userprofile/${id}`, {
-    //     method: 'PUT',
-    //     body: formData,
-    //   })
-    //     .then(res => { console.log(res); return res.json() })
-    //     .then(data => setUserData(data));
-    // }
-    // console.log(inputs, id);
 
     return (
         <ThemeProvider theme={theme}>
@@ -57,7 +43,6 @@ function UserProfile() {
                 <CssBaseline/>
                 <Box
                     sx={{
-                        marginTop: 8,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
@@ -124,7 +109,10 @@ function UserProfile() {
                         </Box>
                     </div>
                 </Box>
-            </Container>
+        </Container>
+        <>
+          {favorite.filter((el) => el.userId === id).map((el) => <div>{el.cityBegin} - {el.cityEnd}</div>)}
+        </>
         </ThemeProvider>
     );
 }

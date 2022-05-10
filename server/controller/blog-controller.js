@@ -11,15 +11,28 @@ class BlogController {
                 {
                     id: 1,
                     title: 'Post 1',
-                    body: 'Content 1',
+                    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat.',
                     imagePost: 'https://picsum.photos/200/300',
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
 
                 },
                 {
                     id: 2,
                     title: 'Post 2',
-                    body: 'Content 2',
+                    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat.',
                     imagePost: 'https://picsum.photos/200/300',
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+
+                },
+                {
+                    id: 3,
+                    title: 'Post 3',
+                    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat.',
+                    imagePost: 'https://picsum.photos/200/300',
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
 
                 }
             ]

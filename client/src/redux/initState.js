@@ -8,6 +8,5 @@ export const initState = {
     currencyPrice: [],
     currencyPrice2: [],
     currentCurrency: 'USD',
-
-
+    history: [],
 }

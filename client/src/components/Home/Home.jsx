@@ -16,6 +16,8 @@ import Header from "../Header/Header";
 import Chart2 from "../Chart2/Chart2";
 import Chart3 from "../Chart3/Chart3";
 import Chart4 from "../Chart4/Chart4";
+import Chart5 from '../Chart5/Chart5'
+import Chart6 from '../Chart6/Chart6'
 import Footer from '../Footer/Footer'
 import BlogList from "../Blog/BlogList";
 
@@ -30,7 +32,7 @@ const divStyle = {
 
 function Home() {
     const price = useSelector((state) => state.price)
-    const price2 = useSelector((state) => state.price2)
+
     const [chart, setChart] = useState(price)
 
     const dispatch = useDispatch()
@@ -83,6 +85,13 @@ function Home() {
                 {chart
                     &&
                     <>
+                        <Currency/>
+                        <Chart/>
+                        <Chart2/>
+                        <Chart3/>
+                        <Chart4/>
+                        <Chart5/>
+                        <Chart6/>
                         <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
                             <div style={{display: 'flex', justifyContent: 'center', margin: 40, width: '20vw'}}>
                                 <div style={{display: 'flex', justifyContent: 'center', marginTop: 17}}>Currency:</div>
