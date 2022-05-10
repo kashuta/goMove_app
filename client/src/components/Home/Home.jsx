@@ -15,6 +15,7 @@ import Chart2 from "../Chart2/Chart2";
 import Chart3 from "../Chart3/Chart3";
 import Chart4 from "../Chart4/Chart4";
 import Footer from '../Footer/Footer'
+import BlogList from "../Blog/BlogList";
 
 const divStyle = {
     height: '100vh',
@@ -68,7 +69,7 @@ function Home() {
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                    <div style={{marginRight: '10px'}}>
+                        <div style={{marginRight: '10px'}}>
                             <StaticGraph/>
                         </div>
                     </Grid>
@@ -78,10 +79,10 @@ function Home() {
                     &&
                     <>
                         <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
-                        <div style={{display: 'flex', justifyContent: 'center', margin: 40, width: '20vw' }}>
-                            <div style={{display: 'flex', justifyContent: 'center', marginTop: 17}}>Currency:</div>
-                            <Currency/>
-                        </div>
+                            <div style={{display: 'flex', justifyContent: 'center', margin: 40, width: '20vw'}}>
+                                <div style={{display: 'flex', justifyContent: 'center', marginTop: 17}}>Currency:</div>
+                                <Currency/>
+                            </div>
                         </div>
                         <div style={{width: '90%'}}>
                             <div style={{marginTop: '10vh'}}>
@@ -100,7 +101,8 @@ function Home() {
                     </>
                 }
             </div>
-            <Footer />
+            <BlogList/>
+            <Footer/>
         </>
 
     )

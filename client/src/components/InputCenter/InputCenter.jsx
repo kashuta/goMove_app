@@ -4,10 +4,13 @@ import {useDispatch, useSelector} from 'react-redux'
 import {getPriceFromDB, getPriceFromDB2} from '../../redux/thunk/thunkPrice'
 import {getlineFrontCity} from "../../redux/actions/lineFrontCityAction";
 import {Link} from "react-scroll";
+import { addHistoryFromDB } from '../../redux/thunk/thunkHistory';
 
 
 function InputCenter() {
 
+    const user = useSelector((state) => state.user)
+    
     const city = useSelector((state) => state.city)
     const [slice, setSlice] = useState([])
     const [data, setData] = useState("")
@@ -15,7 +18,7 @@ function InputCenter() {
 
     const dispatch = useDispatch()
 
-
+  
     const searchCity = () => {
         let new1 = data.split(',')
         let cityFirst;
@@ -40,12 +43,15 @@ function InputCenter() {
             country1 = new3[1]
         }
 
-
-        let new4 = {city: cityFirst1, country: country1}
-
+        let new4 = { city: cityFirst1, country: country1 }
+        // let cityFrom = { data: cityBegin }
+        
+        
+        console.log(data2, '21');
         dispatch(getPriceFromDB(new2))
         dispatch(getPriceFromDB2(new4))
-
+        dispatch(addHistoryFromDB(data, data2, user))
+      
 
         const city1 = data.split(', ')[0];
         const city2 = data2.split(', ')[0];
@@ -82,7 +88,7 @@ function InputCenter() {
                         variant="outlined"
 
                     />}
-                onChange={(e) => setData(e.target.innerText)}
+                onChange={(e) => setData(e.target.innerText.replace(/ /gm, ''))}
 
             />
             <Autocomplete
@@ -100,8 +106,7 @@ function InputCenter() {
                         variant="outlined"
 
                     />}
-                onChange={(e) => setData2(e.target.innerText)}
-
+                onChange={(e) => setData2(e.target.innerText.replace(/ /gm, ''))}
             />
             <Link
                 to='section1'
