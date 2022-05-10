@@ -80,13 +80,13 @@ function Home() {
                 {chart
                     &&
                     <>
-                        <Currency/>
-                        <Chart/>
+                        {/* <Currency/> */}
+                        {/* <Chart/>
                         <Chart2/>
                         <Chart3/>
                         <Chart4/>
                         <Chart5/>
-                        <Chart6/>
+                        <Chart6/> */}
                         <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
                             <div style={{display: 'flex', justifyContent: 'center', margin: 40, width: '20vw'}}>
                                 <div style={{display: 'flex', justifyContent: 'center', marginTop: 17}}>Currency:</div>
@@ -105,6 +105,12 @@ function Home() {
                             </div>
                             <div style={{marginTop: '10vh'}}>
                                 <Chart4/>
+                            </div>
+                            <div style={{marginTop: '10vh'}}>
+                                <Chart5/>
+                            </div>
+                            <div style={{marginTop: '10vh'}}>
+                                <Chart6/>
                             </div>
                         </div>
                     </>

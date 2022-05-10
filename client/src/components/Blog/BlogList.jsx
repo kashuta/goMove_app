@@ -15,7 +15,7 @@ const BlogList = () => {
     }, []);
     return (
         <>
-            <div id='content' class="mui-container-fluid">
+            <div id='content' className="mui-container-fluid">
                 <h1>Articles</h1>
                 <div className="mui-row">
                     <ul>
