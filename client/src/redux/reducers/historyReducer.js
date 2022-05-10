@@ -1,7 +1,8 @@
-import { initState } from "../initState";
-import { ADD_HISTORY, GET_HISTORY } from "../types/histore.types";
+import {initState} from "../initState";
+import {ADD_HISTORY, GET_HISTORY} from "../types/histore.types";
 
 export const historyReducer = (state = initState, action) => {
+
   switch (action.type) {
     case GET_HISTORY:
       return action.payload
@@ -9,4 +10,5 @@ export const historyReducer = (state = initState, action) => {
       return [...state.history, action.payload]
     default: return state
   }
+
 }
