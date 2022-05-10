@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getCityFromDB} from '../../redux/thunk/thunkCity'
 
+import planeStyle from './home.css'
 import InputCenter from '../InputCenter/InputCenter'
 import StaticGraph from '../StaticGraph/StaticGraph'
 import Grid from "@mui/material/Grid";
@@ -9,12 +10,14 @@ import Grid from "@mui/material/Grid";
 import Chart from '../Chart/Chart'
 
 import backgroundImg from '../../images/background.jpg'
+import plane from '../../images/plane.png'
 import Currency from "../Currency/Currency";
 import Header from "../Header/Header";
 import Chart2 from "../Chart2/Chart2";
 import Chart3 from "../Chart3/Chart3";
 import Chart4 from "../Chart4/Chart4";
 import Footer from '../Footer/Footer'
+import BlogList from "../Blog/BlogList";
 
 const divStyle = {
     height: '100vh',
@@ -43,6 +46,9 @@ function Home() {
         <>
             <div style={divStyle}>
                 <Header/>
+                <div className='scene'>
+                    <img src={plane} className='plane' style={planeStyle}></img>
+                </div>
                 <div className='input-wrapper' style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -50,8 +56,8 @@ function Home() {
                     textAlign: 'center',
                     width: '100%'
                 }}>
-                    <div style={{display: 'flex', justifyContent: 'center', marginTop: '30vh'}}>
-                        <InputCenter/>
+                    <div style={{display: 'flex', justifyContent: 'center', marginTop: '25vh', position: 'relative', zIndex: '8'}}>
+                        <InputCenter />
                     </div>
                 </div>
             </div>
@@ -68,7 +74,7 @@ function Home() {
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                    <div style={{marginRight: '10px'}}>
+                        <div style={{marginRight: '10px'}}>
                             <StaticGraph/>
                         </div>
                     </Grid>
@@ -78,10 +84,10 @@ function Home() {
                     &&
                     <>
                         <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
-                        <div style={{display: 'flex', justifyContent: 'center', margin: 40, width: '20vw' }}>
-                            <div style={{display: 'flex', justifyContent: 'center', marginTop: 17}}>Currency:</div>
-                            <Currency/>
-                        </div>
+                            <div style={{display: 'flex', justifyContent: 'center', margin: 40, width: '20vw'}}>
+                                <div style={{display: 'flex', justifyContent: 'center', marginTop: 17}}>Currency:</div>
+                                <Currency/>
+                            </div>
                         </div>
                         <div style={{width: '90%'}}>
                             <div style={{marginTop: '10vh'}}>
@@ -100,7 +106,8 @@ function Home() {
                     </>
                 }
             </div>
-            <Footer />
+            <BlogList/>
+            <Footer/>
         </>
 
     )
