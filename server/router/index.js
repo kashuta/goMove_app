@@ -6,6 +6,7 @@ const apiData = require('../controller/api');
 const upload = require('../middleware/multer.middleware');
 const blogController = require('../controller/blog-controller');
 const historyController = require('../controller/history-controller');
+const commentController = require('../controller/comment-controller');
 
 //auth route
 router.post(
@@ -43,5 +44,10 @@ router.delete('/blog/:id', authMiddleware, blogController.deletePost);
 router.get('/history/:id', authMiddleware, historyController.getAllHistory);
 router.post('/history', authMiddleware, historyController.createHistory);
 router.delete('/history/:id', authMiddleware, historyController.deleteHistory);
+
+//comment routes
+router.post('/comment', authMiddleware, commentController.createComment);
+router.delete('/comment/:id', authMiddleware, commentController.deleteComment);
+router.get('/comment/:id', authMiddleware, commentController.getComments);
 
 module.exports = router;

@@ -39,8 +39,8 @@ const Header = () => {
                 <div className="app__header-badge">
                     <div className="badge-cmp app__flex">                     
                         <div>
-                            <p className="p-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <h1 className="head-text">lets do that</h1>
+                            <p className="p-text">We are providing world’s largest cost of living database. It`s  global database of quality of life informations including lot of indicators like perceived crime rates, and quality of healthcare, among many other statistics.</p>
+                            <h1 className="head-text"> Let's try to discover it!</h1>
                         </div>
                     </div>
 

@@ -11,5 +11,5 @@ export default {
     logo_transparent,
     logomenu,
     circle,
-    logocircle
+    logocircle,
 };

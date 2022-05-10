@@ -28,7 +28,7 @@ function Footer() {
             </li>
             <li style={liStyle}>
               Api provided by &nbsp;
-              <Link style={linkStyle} to='https://www.numbeo.com/cost-of-living/'>numbeo</Link>
+              <a style={linkStyle} href='https://www.numbeo.com/cost-of-living/'>numbeo</a>
             </li>
           </ul>
         </div>

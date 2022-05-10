@@ -34,7 +34,7 @@ const searchHandler = (e) => {
 } 
   return (
     <>
-      <Box sx={{ minWidth: 100 }} />
+      <Box sx={{ minWidth: 10 }} />
       <FormControl fullWidth>
       <InputLabel variant="standard" htmlFor="uncontrolled-native">
         

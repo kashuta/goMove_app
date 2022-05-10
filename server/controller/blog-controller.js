@@ -6,7 +6,23 @@ const blogService = require('../service/blog-service');
 class BlogController {
     async getAllPosts(req, res, next) {
         try {
-            const posts = await blogService.getAllPosts();
+            // const posts = await blogService.getAllPosts();
+            const posts = [
+                {
+                    id: 1,
+                    title: 'Post 1',
+                    body: 'Content 1',
+                    imagePost: 'https://picsum.photos/200/300',
+
+                },
+                {
+                    id: 2,
+                    title: 'Post 2',
+                    body: 'Content 2',
+                    imagePost: 'https://picsum.photos/200/300',
+
+                }
+            ]
             res.status(200).json(posts);
         } catch (e) {
             next(e);
