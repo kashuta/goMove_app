@@ -6,7 +6,7 @@ export const historyReducer = (state = initState, action) => {
     case GET_HISTORY:
       return action.payload
     case ADD_HISTORY:
-      return action.payload
+      return [...state.history, action.payload]
     default: return state
   }
 }
