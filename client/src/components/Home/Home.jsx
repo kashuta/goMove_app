@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getCityFromDB} from '../../redux/thunk/thunkCity'
 
-import planeStyle from './home.css'
+import planeStyle from './Home.css'
 import InputCenter from '../InputCenter/InputCenter'
 import StaticGraph from '../StaticGraph/StaticGraph'
 import Grid from "@mui/material/Grid";
