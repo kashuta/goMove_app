@@ -95,6 +95,7 @@ const NavBar = () => {
                             </Link>
                         </>
                     }
+
                 </Icons>
             </StyledToolbar>
         </AppBar>
