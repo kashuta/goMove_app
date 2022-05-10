@@ -57,17 +57,20 @@ function Home() {
             </div>
             <div id='section1' style={{margin: 30}}>
                 <Grid container>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <StaticGraph/>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <div style={{marginRight: '10px'}}>
+                            <StaticGraph/>
+                        </div>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <StaticGraph/>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <div style={{marginRight: '10px'}}>
+                            <StaticGraph/>
+                        </div>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <StaticGraph/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <StaticGraph/>
+                    <Grid item xs={12} sm={6} md={4}>
+                    <div style={{marginRight: '10px'}}>
+                            <StaticGraph/>
+                        </div>
                     </Grid>
                 </Grid>
 
@@ -80,10 +83,20 @@ function Home() {
                             <Currency/>
                         </div>
                         </div>
-                        <Chart/>
-                        <Chart2/>
-                        <Chart3/>
-                        <Chart4/>
+                        <div style={{width: '90%'}}>
+                            <div style={{marginTop: '10vh'}}>
+                                <Chart/>
+                            </div>
+                            <div style={{marginTop: '10vh'}}>
+                                <Chart2/>
+                            </div>
+                            <div style={{marginTop: '10vh'}}>
+                                <Chart3/>
+                            </div>
+                            <div style={{marginTop: '10vh'}}>
+                                <Chart4/>
+                            </div>
+                        </div>
                     </>
                 }
             </div>

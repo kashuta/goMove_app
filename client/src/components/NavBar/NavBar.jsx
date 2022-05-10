@@ -52,13 +52,6 @@ const NavBar = () => {
                         <img src={images.logomenu} style={{height: 50, marginTop: 10}} alt="SVG as an image"/>
                     </Link>
                 </Typography>
-                {/* <form onSubmit={(e) => submitHandler(e.target.value )}>
-
-<Search>
-                    <InputBase placeholder='Search' value={findCity}></InputBase>
-                </Search>
-                <button type='submit'> найти</button>
-                </form> */}
                 <Icons>
                     {/* Тут прописать условие авторизации пользователя */}
                     {user ?
@@ -101,18 +94,7 @@ const NavBar = () => {
                                 <Button sx={{color: "white"}}>Sign In</Button>
                             </Link>
                         </>
-
-
                     }
-                    {/* <Link to='/registration' style={{ textDecoration: 'none' }}>
-                      <Button variant="outlined" sx={{color: 'white', backgroundColor: '#FFB703'}}>Sign Up</Button>
-                    </Link>
-                    <Link to='/auth' style={{ textDecoration: 'none' }}>
-                      <Button sx={{color: "white"}}>Sign In</Button>
-
-                  </Link>
-                    <Avatar sx={{width:35, height:35}} src='#'/>
-                    <MenuIcon onClick={(e) => setOpen(true)} /> */}
                 </Icons>
             </StyledToolbar>
         </AppBar>
