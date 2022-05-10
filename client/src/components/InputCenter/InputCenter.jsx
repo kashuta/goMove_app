@@ -105,6 +105,7 @@ function InputCenter() {
             />
             <Link
                 to='section1'
+                offset={-70}
                 smooth={true}
                 delay={750}
             >

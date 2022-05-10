@@ -34,25 +34,25 @@ const searchHandler = (e) => {
 } 
   return (
     <>
-    <Box sx={{ minWidth: 100 }}></Box>
-    <FormControl fullWidth>
-  <InputLabel variant="standard" htmlFor="uncontrolled-native">
-      
-  </InputLabel>
-  <NativeSelect
-    defaultValue={30}
-    onChange={searchHandler}
-    inputProps={{
-      name: 'currency',
-      id: 'uncontrolled-native',
-    }}
-  >
-    {
-      currency?.map((el) => <option key={el.currency} value={el.currency}>{el.currency}</option>)
-    }
-    
-  </NativeSelect>
-</FormControl>
+      <Box sx={{ minWidth: 100 }} />
+      <FormControl fullWidth>
+      <InputLabel variant="standard" htmlFor="uncontrolled-native">
+        
+      </InputLabel>
+        <NativeSelect
+        defaultValue={30}
+        onChange={searchHandler}
+        inputProps={{
+          name: 'currency',
+          id: 'uncontrolled-native',
+        }}
+      >
+        {
+          currency?.map((el) => <option key={el.currency} value={el.currency}>{el.currency}</option>)
+        }
+        
+      </NativeSelect>
+    </FormControl>
     </>
   )
 }

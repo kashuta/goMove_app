@@ -79,6 +79,9 @@ const NavBar = () => {
                                 }}
                             >
                                 <MenuItem>
+                                    <Link to='/blog' style={{textDecoration: 'none'}}>Blog</Link>
+                                </MenuItem>
+                                <MenuItem>
                                     <Link to='/userprofile' style={{textDecoration: 'none'}}>Profile</Link>
                                 </MenuItem>
                                 <MenuItem

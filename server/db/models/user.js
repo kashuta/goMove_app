@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
             this.hasMany(models.Post, {
                 foreignKey: 'id',
             });
+            this.hasMany(models.City, {foreignKey: 'id'});
         }
     }
 

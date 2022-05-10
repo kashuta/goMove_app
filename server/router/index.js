@@ -5,8 +5,9 @@ const authMiddleware = require('../middleware/auth.middleware');
 const apiData = require('../controller/api');
 const upload = require('../middleware/multer.middleware');
 const blogController = require('../controller/blog-controller');
+const historyController = require('../controller/history-controller');
 
-//auth routes
+//auth route
 router.post(
     '/registration',
     body('email').isEmail().withMessage('Email is not valid'),
@@ -37,5 +38,10 @@ router.get('/blog/:id', blogController.getPostById);
 router.post('/blog', authMiddleware, blogController.createPost);
 router.patch('/blog/:id', authMiddleware, blogController.updatePost);
 router.delete('/blog/:id', authMiddleware, blogController.deletePost);
+
+//history routes
+router.get('/history/:id', authMiddleware, historyController.getAllHistory);
+router.post('/history', authMiddleware, historyController.createHistory);
+router.delete('/history/:id', authMiddleware, historyController.deleteHistory);
 
 module.exports = router;
