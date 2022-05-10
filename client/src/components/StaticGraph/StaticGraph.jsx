@@ -1,21 +1,3 @@
-// import React from 'react';
-// import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
-
-// function StaticGraph() {
-//   return ( 
-//     <Card sx={{ minWidth: 245 }}>
-//       <CardMedia
-//         component="img"
-//         height="140"
-//         image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5J3EahE8jJAwqtwbmlrPCK3QTSdHrWU4WTg&usqp=CAU"
-//         alt="graph"
-//       />
-//   </Card>
-//    );
-// }
-
-// export default StaticGraph;
-
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
