@@ -15,7 +15,6 @@ export const THUNK_ACTION_LOGOUT = () => async (dispatch) => {
     try {
         await AuthService.logout();
         dispatch(isNotAuth());
-
     } catch (e) {
         console.log(e);
     } finally {

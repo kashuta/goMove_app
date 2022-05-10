@@ -12,7 +12,7 @@ function InputCenter() {
     const user = useSelector((state) => state.user)
     
     const city = useSelector((state) => state.city)
-    const [slice, setSlice] = useState([])
+  
     const [data, setData] = useState("")
     const [data2, setData2] = useState("")
 
