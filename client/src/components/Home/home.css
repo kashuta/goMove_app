@@ -1,0 +1,27 @@
+.scene {
+  width: 100vw;height: 10px;
+  margin-bottom: 7%;
+  z-index: 7;
+}
+
+.scene img {
+  position: absolute;
+}
+
+.plane {
+  margin-top: 25vh;
+  top: 150px;
+  left: -50vw;
+  width: 25%;
+  animation: plane-move 10s;
+  z-index: 5;
+}
+
+@keyframes plane-move {
+  to {
+    transform:
+    translate(100vw, -550px)
+  }
+}
+
+/* @media screen and ( max-width: 900px) */
