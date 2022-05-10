@@ -13,7 +13,9 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
             this.hasOne(models.Token, {
                 foreignKey: 'id',
-
+            });
+            this.hasMany(models.Post, {
+                foreignKey: 'id',
             });
         }
     }
