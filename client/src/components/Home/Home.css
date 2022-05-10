@@ -11,15 +11,17 @@
 .plane {
   margin-top: 25vh;
   top: 150px;
-  left: -350px;
+  left: -50vw;
   width: 25%;
-  animation: plane-move 25s;
+  animation: plane-move 10s;
   z-index: 5;
 }
 
 @keyframes plane-move {
   to {
     transform:
-    translate(200vw, -500px)
+    translate(100vw, -550px)
   }
 }
+
+/* @media screen and ( max-width: 900px) */
