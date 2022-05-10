@@ -90,7 +90,7 @@ function Home() {
                         <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
                             <div style={{display: 'flex', justifyContent: 'center', margin: 40, width: '20vw'}}>
                                 <div style={{display: 'flex', justifyContent: 'center', marginTop: 17}}>Currency:</div>
-                                <Currency/>
+                                {/*<Currency/>*/}
                             </div>
                         </div>
                         <div style={{width: '90%'}}>
