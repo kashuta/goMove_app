@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 const Chart6 = () => {
   const price = useSelector((state => state.currencyPrice))
-  console.log(price);
   const price2 = useSelector((state => state.currencyPrice2))
   const city1 = useSelector((state) => state.lineFrontCity)
   const city2 = useSelector((state) => state.lineFrontCity)

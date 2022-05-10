@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 const Chart3 = () => {
   const price = useSelector((state => state.currencyPrice))
-  console.log('----', price);
   const price2 = useSelector((state => state.currencyPrice2))
   const city1 = useSelector((state) => state.lineFrontCity)
   const city2 = useSelector((state) => state.lineFrontCity)
@@ -19,13 +18,10 @@ const Chart3 = () => {
       return newEl
     }).filter((el) => el.label === 'Transportation' ).filter((el)=>!el.name.includes("Car"))
   }
-  //.filter((el) => el !== 'Toyota Corolla Sedan 1.6l 97kW Comfort (Or Equivalent New Car )' && el !== 'Volkswagen Golf 1.4 90 KW Trendline (Or Equivalent New Car)')
   
-//console.log((transportation(price)).map((el) => el.price))
   const barChartData = {
     labels: (transportation(price)).map(el=>el.name),
-    
-
+  
     datasets: [
       {
         data: (transportation(price)).map((el) => el.price),
@@ -49,7 +45,7 @@ const Chart3 = () => {
       }
     ]
   };
-//console.log('33333333333', barChartData.labels);
+
   const barChart = (
     <Bar
       // type="bar"

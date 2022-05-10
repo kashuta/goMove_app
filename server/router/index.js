@@ -27,6 +27,10 @@ router.get('/users', authMiddleware, userController.getUsers);
 router.get('/city', apiData.home);
 router.post('/price', apiData.price);
 router.get('/currency', apiData.currency);
+router.get('/costLiving', apiData.costLiving);
+
+
+
 
 // user profile routes
 router.get('/userprofile/:id', userController.getUserProfile);
