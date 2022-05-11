@@ -40,7 +40,6 @@ class ApiData {
       );
 
       if (response.data.currency !== 'USD') {
-        // console.log(response.data);
         const result = response.data.prices.map((el) => ({
           id: el.item_id,
           name: el.item_name,
@@ -79,6 +78,30 @@ class ApiData {
       res.sendStatus(400);
     }
   }
+  async costLiving(req, res) {
+    try {
+      const currency = await axios(
+        `https://www.numbeo.com/api/rankings_by_city_current?api_key=${process.env.API_KEY_NUM}&section=1`,
+      );
+
+      const result = currency.data.map((el) => ({
+        city: el.city_name,
+        cost: el.cpi_index,
+      }));
+      res.json(result);
+    } catch (err) {
+      console.log(err);
+      res.sendStatus(400);
+    }
+  }
+
+
 }
 
 module.exports = new ApiData();
+
+
+// https://www.numbeo.com/api/currency_exchange_rates?api_key=${process.env.API_KEY_NUM}`
+// https://www.numbeo.com/api/rankings_by_city_current?api_key=omjk9aakst2wko§ion=1
+
+// https://www.numbeo.com/api/rankings_by_city_current?api_key=${process.env.API_KEY_NUM}&section=1
