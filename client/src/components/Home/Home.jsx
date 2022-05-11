@@ -5,8 +5,7 @@ import {getCityFromDB} from '../../redux/thunk/thunkCity'
 
 import planeStyle from './Home.css'
 import InputCenter from '../InputCenter/InputCenter'
-import StaticGraph from '../StaticGraph/StaticGraph'
-import { Grid, Tabs, Tab} from "@mui/material";
+import {Tabs, Tab} from "@mui/material";
 
 import Chart from '../Chart/Chart'
 
@@ -23,6 +22,7 @@ import Footer from '../Footer/Footer'
 import BlogList from "../Blog/BlogList";
 import Chart7 from '../Chart7/Chart7'
 import Chart8 from '../Chart8/Chart8'
+import OutlinedCard from '../StaticGraph/StaticGraph'
 
 
 const divStyle = {
@@ -80,27 +80,10 @@ function Home() {
                 </div>
             </div>
             <div id='section1' style={{margin: 30}}>
-                <Grid container>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <div style={{marginRight: '10px'}}>
-                            <StaticGraph/>
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <div style={{marginRight: '10px'}}>
-                            <StaticGraph/>
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <div style={{marginRight: '10px'}}>
-                            <StaticGraph/>
-                        </div>
-                    </Grid>
-                </Grid>
-
                 {chart
                     &&
                     <>
+                        <OutlinedCard />
                         <div style={{display: 'flex', height: '5vh', width: '100%', justifyContent: 'center'}}>
                             <div style={{marginRight: '5vw'}}>
                                 {/* <span>Cuwuuw</span> */}
@@ -123,18 +106,6 @@ function Home() {
                             <div style={{marginTop: '10vh'}}>
                                 <Chart8/>
                             </div>
-                            {/* <div style={{marginTop: '10vh'}}>
-                                <Chart3/>
-                            </div>
-                            <div style={{marginTop: '10vh'}}>
-                                <Chart4/>
-                            </div>
-                            <div style={{marginTop: '10vh'}}>
-                                <Chart5/>
-                            </div>
-                            <div style={{marginTop: '10vh'}}>
-                                <Chart6/>
-                            </div> */}
                         </div>
                     </>
                 }
