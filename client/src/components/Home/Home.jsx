@@ -99,14 +99,13 @@ function Home() {
                                 <Currency/>
                             </div>
                             <Tabs value={value} onChange={handleTabs}>
-                                <Tab label='Graph1' />
-                                <Tab label='Graph2' />
-                                <Tab label='Graph3' />
-                                <Tab label='Graph4' />
-                                <Tab label='Graph5' />
-                                <Tab label='Graph6' />
-                                <Tab label='Graph7' />
-                                <Tab label='Graph8' />
+                                <Tab label='Restaurants' />
+                                <Tab label='Markets' />
+                                <Tab label='Transportation' />
+                                <Tab label='Rent' />
+                                <Tab label='Apartments' />
+                                <Tab label='Salary' />
+                                <Tab label='Food' />
                             </Tabs>
                         </div>
                         <div style={{width: '90%'}}>

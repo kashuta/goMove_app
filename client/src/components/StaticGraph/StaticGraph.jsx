@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { CardMedia } from '@mui/material';
 import Chart4 from '../Chart4/Chart4';
+import Chart5 from '../Chart5/Chart5';
 
 const bull = (
   <Box
@@ -19,10 +20,13 @@ const bull = (
 
 const card = (
   <React.Fragment>
-    <CardContent>
-    <Chart4/>
-      <Typography variant="h8" component="div">
+    <CardContent >
+    
+    <Chart5/>
+    
+      <Typography variant="h9" component="div">
         Name of Graph
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit libero nostrum optio, praesentium maiores laborum iure incidunt iste, fugit rem quisquam reprehenderit odio, ad ratione excepturi repellat sequi vero provident?
       </Typography>
     </CardContent>
   </React.Fragment>

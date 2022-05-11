@@ -64,7 +64,7 @@ const Chart7 = () => {
             },
             title: {
               display: true,
-              text: ` Market prices, ${setCurrency} `,
+              text: ` Food prices, ${setCurrency} `,
               font: {
                 size:20
               }          
