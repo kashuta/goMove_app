@@ -1,5 +1,5 @@
 import {Autocomplete, Button, createFilterOptions, TextField} from '@mui/material'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getPriceFromDB, getPriceFromDB2} from '../../redux/thunk/thunkPrice'
 import {getlineFrontCity} from "../../redux/actions/lineFrontCityAction";
@@ -8,16 +8,23 @@ import { addHistoryFromDB } from '../../redux/thunk/thunkHistory';
 import { getCostLivingFromBD } from '../../redux/thunk/thunkCostLiving';
 
 
-function InputCenter() {
-
-    const user = useSelector((state) => state.user)
-    
-    const city = useSelector((state) => state.city)
+function InputCenter({find}) {
+  const user = useSelector((state) => state.user)
+  const history = useSelector((state) => state.history)
+  const city = useSelector((state) => state.city)
+  const [data, setData] = useState('')
+  const [data2, setData2] = useState('')
   
-    const [data, setData] = useState("")
-    const [data2, setData2] = useState("")
+  const dispatch = useDispatch()
 
-    const dispatch = useDispatch()
+  useEffect(() => {
+    if (find) {
+      console.log('=====', find.cityBegin);
+      console.log('=====', find.cityEnd);
+      setData(find.cityBegin)
+      setData2(find.cityEnd)
+      }
+    }, [find])
 
   
     const searchCity = () => {
@@ -44,8 +51,7 @@ function InputCenter() {
             country1 = new3[1]
         }
 
-        let new4 = { city: cityFirst1, country: country1 }
-        // let cityFrom = { data: cityBegin }
+        let new4 = { city: cityFirst1, country: country1 }        
         
         
         
@@ -76,7 +82,8 @@ function InputCenter() {
 
     return (
         <>
-            <Autocomplete
+        <Autocomplete
+                value={find?.cityBegin}
                 filterOptions={filterOptions}
                 selectOnFocus={true}
                 id="select-on-focus-1"
@@ -87,14 +94,15 @@ function InputCenter() {
                     <TextField
                         sx={{background: 'white', borderRadius: 5}}
                         {...params}
-                        placeholder="From"
+                        placeholder='From'
                         variant="outlined"
 
                     />}
                 onChange={(e) => setData(e.target.innerText.replace(/ /gm, ''))}
 
             />
-            <Autocomplete
+        <Autocomplete
+                value={find?.cityEnd}
                 filterOptions={filterOptions}
                 selectOnFocus={true}
                 id="select-on-focus-2"
@@ -105,7 +113,7 @@ function InputCenter() {
                     <TextField
                         sx={{background: 'white', borderRadius: 5}}
                         {...params}
-                        placeholder="To"
+                        placeholder='To'
                         variant="outlined"
 
                     />}
