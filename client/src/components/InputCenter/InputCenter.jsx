@@ -16,9 +16,11 @@ function InputCenter({find}) {
   const [data2, setData2] = useState('')
   
   const dispatch = useDispatch()
+
   useEffect(() => {
     if (find) {
-      console.log('=====', find.cityBegin );
+      console.log('=====', find.cityBegin);
+      console.log('=====', find.cityEnd);
       setData(find.cityBegin)
       setData2(find.cityEnd)
       }
@@ -80,7 +82,8 @@ function InputCenter({find}) {
 
     return (
         <>
-            <Autocomplete
+        <Autocomplete
+                value={find?.cityBegin}
                 filterOptions={filterOptions}
                 selectOnFocus={true}
                 id="select-on-focus-1"
@@ -91,14 +94,15 @@ function InputCenter({find}) {
                     <TextField
                         sx={{background: 'white', borderRadius: 5}}
                         {...params}
-                        placeholder="From"
+                        placeholder='From'
                         variant="outlined"
 
                     />}
                 onChange={(e) => setData(e.target.innerText.replace(/ /gm, ''))}
 
             />
-            <Autocomplete
+        <Autocomplete
+                value={find?.cityEnd}
                 filterOptions={filterOptions}
                 selectOnFocus={true}
                 id="select-on-focus-2"
@@ -109,7 +113,7 @@ function InputCenter({find}) {
                     <TextField
                         sx={{background: 'white', borderRadius: 5}}
                         {...params}
-                        placeholder="To"
+                        placeholder='To'
                         variant="outlined"
 
                     />}
