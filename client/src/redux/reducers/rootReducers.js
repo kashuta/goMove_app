@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux'
 import { cityReducer } from './cityReducer'
+import { costLivingReducer } from './costLivingReducer';
 import { currencyPriceReducer, currencyPriceReducer2 } from './currencyPriceReducer';
 import { currencyReducer } from './currencyReducer';
 import { historyReducer } from './historyReducer';
@@ -20,5 +21,6 @@ export const rootReducer = combineReducers({
   currencyPrice2: currencyPriceReducer2,
   currentCurrency: setCurrencyReducer,
   history: historyReducer,
+  costLiving: costLivingReducer,
 
 })

@@ -55,17 +55,31 @@ const Chart = () => {
       type="bar"
       width={130}
       height={50}
-      options= {{
-        plugins: {
-            title: {
-                display: true,
-                text: ` Restaurants prices, ${setCurrency} `,
-                font: {
-                  size:20
-                } 
+      options= {
+        {
+          indexAxis: 'y',
+          // Elements options apply to all of the options unless overridden in a dataset
+          // In this case, we are setting the border of each horizontal bar to be 2px wide
+          elements: {
+            bar: {
+              borderWidth: 2,
             }
+          },
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'right',
+            },
+            title: {
+              display: true,
+              text: ` Restaurants prices, ${setCurrency} `,
+              font: {
+                size:20
+              }          
+            }
+          }
         }
-    }}
+  }
 
       data={barChartData}
     />
@@ -76,3 +90,4 @@ const Chart = () => {
 
 export default Chart;
 
+// Restaurants prices

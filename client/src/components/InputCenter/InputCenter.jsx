@@ -5,6 +5,7 @@ import {getPriceFromDB, getPriceFromDB2} from '../../redux/thunk/thunkPrice'
 import {getlineFrontCity} from "../../redux/actions/lineFrontCityAction";
 import {Link} from "react-scroll";
 import { addHistoryFromDB } from '../../redux/thunk/thunkHistory';
+import { getCostLivingFromBD } from '../../redux/thunk/thunkCostLiving';
 
 
 function InputCenter() {
@@ -47,10 +48,12 @@ function InputCenter() {
         // let cityFrom = { data: cityBegin }
         
         
-        console.log(data2, '21');
+        
         dispatch(getPriceFromDB(new2))
         dispatch(getPriceFromDB2(new4))
         dispatch(addHistoryFromDB(data, data2, user))
+        dispatch(getCostLivingFromBD())
+
       
 
         const city1 = data.split(', ')[0];

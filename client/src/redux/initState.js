@@ -9,4 +9,5 @@ export const initState = {
     currencyPrice2: [],
     currentCurrency: 'USD',
     history: [],
+    costLiving: [],
 }

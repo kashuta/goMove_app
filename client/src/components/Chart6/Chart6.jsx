@@ -16,7 +16,7 @@ const Chart6 = () => {
       const label = name.pop().trim()
       const newEl = {id:el.id, name:name.join(", "), label, price:el.price}
       return newEl
-    }).filter((el) => el.label === 'Salaries And Financing')
+    }).filter((el) => el.label === 'Salaries And Financing').filter((el)=>!el.name.includes("Yearly"))
   }
   
 
@@ -70,7 +70,7 @@ const Chart6 = () => {
             },
             title: {
               display: true,
-              text: ` Salaries And Financing, ${setCurrency} `,
+              text: ` Salaries, ${setCurrency} `,
               font: {
                 size:20
               }          
