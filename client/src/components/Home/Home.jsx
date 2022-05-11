@@ -19,7 +19,8 @@ import Chart6 from '../Chart6/Chart6'
 import Footer from '../Footer/Footer'
 import BlogList from "../Blog/BlogList";
 import Chart7 from '../Chart7/Chart7'
-import Chart22 from '../Chart2/Chart22'
+import Chart8 from '../Chart8/Chart8'
+
 
 const divStyle = {
     height: '100vh',
@@ -103,7 +104,7 @@ function Home() {
                                 <Chart2/>
                             </div>
                             <div style={{marginTop: '10vh'}}>
-                                <Chart22/>
+                                <Chart7/>
                             </div>
                             <div style={{marginTop: '10vh'}}>
                                 <Chart3/>
@@ -120,6 +121,10 @@ function Home() {
                             <div style={{marginTop: '10vh'}}>
                                 <Chart7/>
                             </div>
+                            <div style={{marginTop: '10vh'}}>
+                                <Chart8/>
+                            </div>
+                            
                         </div>
                     </>
                 }

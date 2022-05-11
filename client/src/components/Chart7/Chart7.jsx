@@ -1,9 +1,8 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-//import { Chart as ChartJS } from 'chart.js/auto'
 import { useSelector } from "react-redux";
 
-const Chart22 = () => {
+const Chart7 = () => {
   const price = useSelector((state) => state.currencyPrice)
   const price2 = useSelector((state) => state.currencyPrice2)
   const city1 = useSelector((state) => state.lineFrontCity)
@@ -19,9 +18,6 @@ const Chart22 = () => {
     }).filter((el) => el.label === 'Markets').map(el=>el.name)
   }
 
-
-  
-//console.log(markets(price));
   const barChartData = {
     labels: markets(price).slice(10,19), 
 
@@ -51,14 +47,11 @@ const Chart22 = () => {
 
   const barChart = (
     <Bar
-      // type="bar"
       width={130}
       height={50}
       options={
         {
           indexAxis: 'y',
-          // Elements options apply to all of the options unless overridden in a dataset
-          // In this case, we are setting the border of each horizontal bar to be 2px wide
           elements: {
             bar: {
               borderWidth: 2,
@@ -90,5 +83,5 @@ const Chart22 = () => {
    
 };
 
-export default Chart22;
+export default Chart7;
 

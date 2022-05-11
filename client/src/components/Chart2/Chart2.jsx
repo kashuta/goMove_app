@@ -20,8 +20,7 @@ const Chart2 = () => {
   }
 
 
-  
-//console.log(markets(price));
+
   const barChartData = {
     labels: markets(price).slice(0,9).map(el=>el.name), 
 

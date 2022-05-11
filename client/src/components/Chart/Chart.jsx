@@ -48,7 +48,7 @@ const Chart = () => {
       }
     ]
   };
-  //console.log('4444', barChartData.labels);
+
   
   const barChart = (
     <Bar
