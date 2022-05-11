@@ -1,6 +1,5 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-// import { Chart as ChartJS } from 'chart.js/auto'
 import { useSelector } from "react-redux";
 
 const Chart6 = () => {
@@ -16,7 +15,7 @@ const Chart6 = () => {
       const label = name.pop().trim()
       const newEl = {id:el.id, name:name.join(", "), label, price:el.price}
       return newEl
-    }).filter((el) => el.label === 'Salaries And Financing')
+    }).filter((el) => el.label === 'Salaries And Financing').filter((el)=>!el.name.includes("Yearly"))
   }
   
 
@@ -56,8 +55,6 @@ const Chart6 = () => {
       options={
         {
           indexAxis: 'y',
-          // Elements options apply to all of the options unless overridden in a dataset
-          // In this case, we are setting the border of each horizontal bar to be 2px wide
           elements: {
             bar: {
               borderWidth: 2,
@@ -70,7 +67,7 @@ const Chart6 = () => {
             },
             title: {
               display: true,
-              text: ` Salaries And Financing, ${setCurrency} `,
+              text: ` Salaries, ${setCurrency} `,
               font: {
                 size:20
               }          

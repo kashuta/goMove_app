@@ -6,7 +6,7 @@ import {getCityFromDB} from '../../redux/thunk/thunkCity'
 import planeStyle from './Home.css'
 import InputCenter from '../InputCenter/InputCenter'
 import StaticGraph from '../StaticGraph/StaticGraph'
-import Grid from "@mui/material/Grid";
+import { Grid, Tabs, Tab} from "@mui/material";
 
 import Chart from '../Chart/Chart'
 
@@ -21,6 +21,9 @@ import Chart5 from '../Chart5/Chart5'
 import Chart6 from '../Chart6/Chart6'
 import Footer from '../Footer/Footer'
 import BlogList from "../Blog/BlogList";
+import Chart7 from '../Chart7/Chart7'
+import Chart8 from '../Chart8/Chart8'
+
 
 const divStyle = {
     height: '100vh',
@@ -37,7 +40,12 @@ function Home() {
     const { country } = useParams()
     const price = useSelector((state) => state.price)
 
+    const [value, setValue] = useState(0);
     const [chart, setChart] = useState(price)
+
+    const handleTabs = (event, value) => {
+        setValue(value);
+    };
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -93,27 +101,29 @@ function Home() {
                 {chart
                     &&
                     <>
-                        {/* <Currency/> */}
-                        {/* <Chart/>
-                        <Chart2/>
-                        <Chart3/>
-                        <Chart4/>
-                        <Chart5/>
-                        <Chart6/> */}
-                        <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
-                            <div style={{display: 'flex', justifyContent: 'center', margin: 40, width: '20vw'}}>
-                                <div style={{display: 'flex', justifyContent: 'center', marginTop: 17}}>Currency:</div>
+                        <div style={{display: 'flex', height: '5vh', width: '100%', justifyContent: 'center'}}>
+                            <div style={{marginRight: '5vw'}}>
+                                {/* <span>Cuwuuw</span> */}
                                 <Currency/>
                             </div>
+                            <Tabs value={value} onChange={handleTabs}>
+                                <Tab label='Restaurants' />
+                                <Tab label='Markets' />
+                                <Tab label='Transportation' />
+                                <Tab label='Rent' />
+                                <Tab label='Apartments' />
+                                <Tab label='Salary' />
+                                <Tab label='Food' />
+                            </Tabs>
                         </div>
                         <div style={{width: '90%'}}>
                             <div style={{marginTop: '10vh'}}>
-                                <Chart/>
+                                { value === 0 ? <Chart/> : value === 1 ? <Chart2/> : value === 2 ? <Chart3/> : value === 3 ? <Chart4/> : value === 4 ? <Chart5/> : value === 5 ? <Chart6/> : <Chart7/>}
                             </div>
                             <div style={{marginTop: '10vh'}}>
-                                <Chart2/>
+                                <Chart8/>
                             </div>
-                            <div style={{marginTop: '10vh'}}>
+                            {/* <div style={{marginTop: '10vh'}}>
                                 <Chart3/>
                             </div>
                             <div style={{marginTop: '10vh'}}>
@@ -124,7 +134,7 @@ function Home() {
                             </div>
                             <div style={{marginTop: '10vh'}}>
                                 <Chart6/>
-                            </div>
+                            </div> */}
                         </div>
                     </>
                 }

@@ -53,17 +53,25 @@ const Chart3 = () => {
       height={50}
       options= {
         {
+          indexAxis: 'y',
+          // Elements options apply to all of the options unless overridden in a dataset
+          // In this case, we are setting the border of each horizontal bar to be 2px wide
+          elements: {
+            bar: {
+              borderWidth: 2,
+            }
+          },
           responsive: true,
           plugins: {
             legend: {
-              position: 'top',
+              position: 'right',
             },
             title: {
               display: true,
-              text: `Transportation, ${setCurrency}`,
+              text: ` Transportation, ${setCurrency} `,
               font: {
-                size: 20
-              }
+                size:20
+              }          
             }
           }
         }
@@ -76,3 +84,4 @@ const Chart3 = () => {
 };
 
 export default Chart3;
+//Transportation
