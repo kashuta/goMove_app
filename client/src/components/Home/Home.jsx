@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {getCityFromDB} from '../../redux/thunk/thunkCity'
 
@@ -34,6 +35,9 @@ const divStyle = {
 }
 
 function Home() {
+   
+    const history = useSelector((state) => state.history)
+    const { country } = useParams()
     const price = useSelector((state) => state.price)
 
     const [value, setValue] = useState(0);
@@ -51,7 +55,11 @@ function Home() {
     useEffect(() => {
         setChart(!!price.length)
     }, [price])
-
+  
+    
+    const [find, setFind] = useState(history.find((el) => el.id == country))
+ 
+    console.log(find);
     return (
         <>
             <div style={divStyle}>
@@ -67,7 +75,7 @@ function Home() {
                     width: '100%'
                 }}>
                     <div style={{display: 'flex', justifyContent: 'center', marginTop: '25vh', position: 'relative', zIndex: '8'}}>
-                        <InputCenter />
+              <InputCenter find={ find }/>
                     </div>
                 </div>
             </div>
