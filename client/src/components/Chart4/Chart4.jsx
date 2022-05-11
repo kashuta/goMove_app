@@ -3,6 +3,7 @@ import { Bar } from "react-chartjs-2"
 import { useSelector } from "react-redux";
 
 const Chart4 = () => {
+
   const price = useSelector((state => state.currencyPrice))
   const price2 = useSelector((state => state.currencyPrice2))
   const city1 = useSelector((state) => state.lineFrontCity)
@@ -45,6 +46,7 @@ const Chart4 = () => {
     ]
   };
 
+
   const barChart = (
     <Bar
       type="bar"
@@ -59,18 +61,40 @@ const Chart4 = () => {
             bar: {
               borderWidth: 2,
             }
-          },
-          responsive: true,
-          plugins: {
-            legend: {
-              position: 'right',
-            },
-            title: {
-              display: true,
-              text: ` Rent Per Month, ${setCurrency} `,
-              font: {
-                size:20
-              }          
+
+            }
+    };
+
+    const barChart = (
+        <Bar
+            type="bar"
+            width={130}
+            height={50}
+            options={
+                {
+                    indexAxis: 'y',
+                    // Elements options apply to all of the options unless overridden in a dataset
+                    // In this case, we are setting the border of each horizontal bar to be 2px wide
+                    elements: {
+                        bar: {
+                            borderWidth: 2,
+                        }
+                    },
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        },
+                        title: {
+                            display: true,
+                            text: ` Rent Per Month, ${setCurrency} `,
+                            font: {
+                                size: 20
+                            }
+                        }
+                    }
+                }
+
             }
           }
         }
