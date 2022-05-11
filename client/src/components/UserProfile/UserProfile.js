@@ -10,7 +10,7 @@ import { getHistoryFromDB } from "../../redux/thunk/thunkHistory";
 const theme = createTheme();
 
 function UserProfile() {
-    const favorite = useSelector(state => state.history)
+    const history = useSelector(state => state.history)
     const id = useSelector(state => state.user.id);
     const dispatch = useDispatch();
     const userData = useSelector((store) => store.user);
@@ -112,11 +112,11 @@ function UserProfile() {
                 </Box>
         </Container>
         <div className="UserProfile__history_container">
-                       <h2>Personal account {inputs.name}</h2>
-          {favorite.filter((el) => el.userId === id).map((el) => {
+                       <h2>Your previous requests</h2>
+          {history.filter((el) => el.userId === id).map((el) => {
             return (
               <div className="UserProfile__history">
-                <Link to='/' style={{textDecoration: 'none'}}>
+                <Link to={`/menu/${el.id}`} style={{textDecoration: 'none'}}>
                   {el.cityBegin} - {el.cityEnd}
                 </Link>
                 <Button sx={{color: "black"}}>Delete</Button>

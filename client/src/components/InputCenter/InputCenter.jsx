@@ -1,5 +1,5 @@
 import {Autocomplete, Button, createFilterOptions, TextField} from '@mui/material'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getPriceFromDB, getPriceFromDB2} from '../../redux/thunk/thunkPrice'
 import {getlineFrontCity} from "../../redux/actions/lineFrontCityAction";
@@ -7,16 +7,21 @@ import {Link} from "react-scroll";
 import { addHistoryFromDB } from '../../redux/thunk/thunkHistory';
 
 
-function InputCenter() {
-
-    const user = useSelector((state) => state.user)
-    
-    const city = useSelector((state) => state.city)
+function InputCenter({find}) {
+  const user = useSelector((state) => state.user)
+  const history = useSelector((state) => state.history)
+  const city = useSelector((state) => state.city)
+  const [data, setData] = useState('')
+  const [data2, setData2] = useState('')
   
-    const [data, setData] = useState("")
-    const [data2, setData2] = useState("")
-
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  useEffect(() => {
+    if (find) {
+      console.log('=====', find.cityBegin );
+      setData(find.cityBegin)
+      setData2(find.cityEnd)
+      }
+    }, [find])
 
   
     const searchCity = () => {
@@ -43,11 +48,8 @@ function InputCenter() {
             country1 = new3[1]
         }
 
-        let new4 = { city: cityFirst1, country: country1 }
-        // let cityFrom = { data: cityBegin }
+        let new4 = { city: cityFirst1, country: country1 }        
         
-        
-        console.log(data2, '21');
         dispatch(getPriceFromDB(new2))
         dispatch(getPriceFromDB2(new4))
         dispatch(addHistoryFromDB(data, data2, user))
