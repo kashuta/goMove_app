@@ -25,8 +25,8 @@ const Chart7 = () => {
       {
         data: price.slice(0,19).map((el) => el.price),
         label: city1.city1,
-        borderColor: "#3333ff",
-        backgroundColor: "rgba(255, 183, 3, 0.5)",
+        borderColor: "#808080",
+        backgroundColor: "rgba(251, 133, 0)",
         fill: true,
         borderWidth: 2,
         borderRadius: 20,
@@ -35,8 +35,8 @@ const Chart7 = () => {
       {
         data: price2.slice(0,19).map((el) => el.price),
         label: city2.city2,
-        borderColor: "#ff3333",
-        backgroundColor: "rgba(33, 158, 188, 0.5)",
+        borderColor: "#cd7f32",
+        backgroundColor: "rgba(33, 158, 188)",
         fill: true,
         borderWidth: 2,
         borderRadius: 20,
