@@ -1,6 +1,5 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-// import { Chart as ChartJS } from 'chart.js/auto'
 import { useSelector } from "react-redux";
 
 const Chart5 = () => {
@@ -56,8 +55,6 @@ const Chart5 = () => {
       options={
         {
           indexAxis: 'y',
-          // Elements options apply to all of the options unless overridden in a dataset
-          // In this case, we are setting the border of each horizontal bar to be 2px wide
           elements: {
             bar: {
               borderWidth: 2,

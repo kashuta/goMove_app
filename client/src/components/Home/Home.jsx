@@ -20,6 +20,9 @@ import Chart5 from '../Chart5/Chart5'
 import Chart6 from '../Chart6/Chart6'
 import Footer from '../Footer/Footer'
 import BlogList from "../Blog/BlogList";
+import Chart7 from '../Chart7/Chart7'
+import Chart8 from '../Chart8/Chart8'
+
 
 const divStyle = {
     height: '100vh',
