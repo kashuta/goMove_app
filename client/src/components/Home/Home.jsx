@@ -91,7 +91,8 @@ function Home() {
                     &&
                     <>
                         <div style={{display: 'flex', height: '5vh', width: '100%', justifyContent: 'center'}}>
-                            <div style={{marginRight: '2vw'}}>
+                            <div style={{marginRight: '5vw'}}>
+                                {/* <span>Cuwuuw</span> */}
                                 <Currency/>
                             </div>
                             <Tabs value={value} onChange={handleTabs}>
@@ -107,9 +108,9 @@ function Home() {
                         </div>
                         <div style={{width: '90%'}}>
                             <div style={{marginTop: '10vh'}}>
-                                <Chart/>
+                                { value === 0 ? <Chart/> : value === 1 ? <Chart2/> : value === 2 ? <Chart3/> : value === 3 ? <Chart4/> : value === 4 ? <Chart5/> : value === 5 ? <Chart6/> : <Chart7/>}
                             </div>
-                            <div style={{marginTop: '10vh'}}>
+                            {/* <div style={{marginTop: '10vh'}}>
                                 <Chart2/>
                             </div>
                             <div style={{marginTop: '10vh'}}>
@@ -123,7 +124,7 @@ function Home() {
                             </div>
                             <div style={{marginTop: '10vh'}}>
                                 <Chart6/>
-                            </div>
+                            </div> */}
                         </div>
                     </>
                 }
