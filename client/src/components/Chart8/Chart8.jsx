@@ -4,12 +4,11 @@ import { useSelector } from "react-redux";
 
 const Chart8 = () => {
   const costLiving = useSelector(state => state.costLiving)
-  console.log(costLiving);
   const lineFrontCity = useSelector(state => state.lineFrontCity)
  
 function costLiv (arr) {
-  const select1 = lineFrontCity.city1.split(',')[0]
-  const select2 = lineFrontCity.city2.split(',')[0]
+  const select1 = lineFrontCity.city1?.split(',')[0]
+  const select2 = lineFrontCity.city2?.split(',')[0]
   
 
   return arr.filter((el) => 

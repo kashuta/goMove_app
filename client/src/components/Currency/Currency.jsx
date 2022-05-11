@@ -40,7 +40,7 @@ const searchHandler = (e) => {
         
       </InputLabel>
         <NativeSelect
-        defaultValue={30}
+        defaultValue={'USD'}
         onChange={searchHandler}
         inputProps={{
           name: 'currency',
