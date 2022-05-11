@@ -110,10 +110,10 @@ function Home() {
                             <div style={{marginTop: '10vh'}}>
                                 { value === 0 ? <Chart/> : value === 1 ? <Chart2/> : value === 2 ? <Chart3/> : value === 3 ? <Chart4/> : value === 4 ? <Chart5/> : value === 5 ? <Chart6/> : <Chart7/>}
                             </div>
-                            {/* <div style={{marginTop: '10vh'}}>
-                                <Chart2/>
-                            </div>
                             <div style={{marginTop: '10vh'}}>
+                                <Chart8/>
+                            </div>
+                            {/* <div style={{marginTop: '10vh'}}>
                                 <Chart3/>
                             </div>
                             <div style={{marginTop: '10vh'}}>
