@@ -111,8 +111,11 @@ function Home() {
                             </div>
                             <div style={{display: 'flex', flexDirection: 'column', margin: '20vh'}}>
                                 <Chart8/>
-                                <p style={{display: 'flex', justifyContent: 'center'}}>Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit, sed do eiusmod tempor. </p>
+                                <p style={{display: 'flex', justifyContent: 'center'}}>
+                                    A cost-of-living index is a theoretical price index that measures relative cost of
+                                    living over time or regions. It is an index that measures differences in the price
+                                    of goods and services, and allows for substitutions with other items as prices
+                                    vary. </p>
                             </div>
                         </div>
                     </>
