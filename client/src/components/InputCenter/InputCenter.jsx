@@ -118,9 +118,9 @@ function InputCenter({find}) {
             />
             <Link
                 to='section1'
-                offset={-70}
+                offset={-68}
                 smooth={true}
-                delay={750}
+                delay={800}
             >
                 <Button onClick={searchCity} variant="contained"
                         sx={{background: '#FFB703', marginLeft: '20px', marginTop: 1.2}}>
