@@ -5,7 +5,7 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import './UserProfile.css'
 import { getUserData, updateUser } from "../../redux/thunk/thunkProfile";
-import { getHistoryFromDB } from "../../redux/thunk/thunkHistory";
+import { deleteHistory, getHistoryFromDB } from "../../redux/thunk/thunkHistory";
 
 const theme = createTheme();
 
@@ -38,6 +38,10 @@ function UserProfile() {
     dispatch(updateUser(inputs, id))
   }
 
+  const removeHistoryHandler = (id) => {
+    dispatch(deleteHistory(id))
+  }
+
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
@@ -55,7 +59,7 @@ function UserProfile() {
                     <div className='UserProfile__container'>
                         <div className="container col-md-4 mb-3 my-3">
                             <div className="card">
-                                <div className="d-flex flex-column align-items-center text-center my-3">
+                                <div className="user-card">
                                     <img
                                         src={inputs.photo ? `http://localhost:5001/img/${userData.photo}` :
                                             'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/b1/b12d371f6c55ed7306277b38b50f6642d13af030_full.jpg'}
@@ -116,10 +120,10 @@ function UserProfile() {
           {history.filter((el) => el.userId === id).map((el) => {
             return (
               <div className="UserProfile__history">
-                <Link to={`/menu/${el.id}`} style={{textDecoration: 'none'}}>
+                <Link to={`/${el.id}`} style={{textDecoration: 'none'}}>
                   {el.cityBegin} - {el.cityEnd}
                 </Link>
-                <Button sx={{color: "black"}}>Delete</Button>
+                <Button data-id={el.id} onClick={(e) => removeHistoryHandler(e.target.dataset.id)}  sx={{color: "black"}}>Delete</Button>
               </div>
               
             )

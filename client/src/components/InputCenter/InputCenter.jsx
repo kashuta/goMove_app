@@ -10,7 +10,6 @@ import { getCostLivingFromBD } from '../../redux/thunk/thunkCostLiving';
 
 function InputCenter({find}) {
   const user = useSelector((state) => state.user)
-  const history = useSelector((state) => state.history)
   const city = useSelector((state) => state.city)
   const [data, setData] = useState('')
   const [data2, setData2] = useState('')
@@ -19,8 +18,6 @@ function InputCenter({find}) {
 
   useEffect(() => {
     if (find) {
-      console.log('=====', find.cityBegin);
-      console.log('=====', find.cityEnd);
       setData(find.cityBegin)
       setData2(find.cityEnd)
       }
@@ -121,9 +118,9 @@ function InputCenter({find}) {
             />
             <Link
                 to='section1'
-                offset={-70}
+                offset={-68}
                 smooth={true}
-                delay={750}
+                delay={800}
             >
                 <Button onClick={searchCity} variant="contained"
                         sx={{background: '#FFB703', marginLeft: '20px', marginTop: 1.2}}>

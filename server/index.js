@@ -22,6 +22,7 @@ app.use(cookieParser());
 app.use('/api', router);
 app.use(errorMiddleware);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/client/build')));
 
 // Start server
 const start = async () => {
