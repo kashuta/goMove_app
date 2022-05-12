@@ -103,8 +103,9 @@ function Home() {
                             <div style={{marginTop: '10vh'}}>
                                 { value === 0 ? <Chart/> : value === 1 ? <Chart2/> : value === 2 ? <Chart3/> : value === 3 ? <Chart4/> : value === 4 ? <Chart5/> : value === 5 ? <Chart6/> : <Chart7/>}
                             </div>
-                            <div style={{marginTop: '10vh'}}>
+                            <div style={{display: 'flex', flexDirection: 'column', marginTop: '10vh', margin: '20vh'}}>
                                 <Chart8/>
+                                <p style={{display: 'flex', justifyContent: 'center'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. </p>
                             </div>
                         </div>
                     </>
