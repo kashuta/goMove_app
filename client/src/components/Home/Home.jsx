@@ -56,14 +56,14 @@ function Home() {
     }, [price])
 
 
-    const [find, setFind] = useState(history.find((el) => el.id == country))
+    const [find, setFind] = useState(history.find((el) => el.id === Number(country)))
 
     return (
         <>
             <div style={divStyle}>
                 <Header/>
                 <div className='scene'>
-                    <img src={plane} className='plane' style={planeStyle}></img>
+                    <img src={plane} className='plane' alt="foto" style={planeStyle}></img>
                 </div>
                 <div className='input-wrapper' style={{
                     display: 'flex',
