@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches:[ main ]
+    branches: [ master ]
   pull_request:
-    branches:[ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
       - name: Node.js CI
         uses: actions/node-@v1
         with:
-          node-version: ${{ secrets.NODE_VERSION }}
+          node-version: ${{ matrix.NODE_VERSION }}
       - run: |
           npm install
           cd client
