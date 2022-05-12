@@ -55,9 +55,10 @@ function Home() {
         setChart(!!price.length)
     }, [price])
   
-    
+
     const [find, setFind] = useState(history.find((el) => el.id === Number(country)))
  
+
     return (
         <>
             <div style={divStyle}>
@@ -68,7 +69,7 @@ function Home() {
                 <div className='input-wrapper' style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    height: '100%',
+                    height: '70vh',
                     textAlign: 'center',
                     width: '100%'
                 }}>
@@ -83,45 +84,46 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div id='section1' style={{margin: 30}}>
+            <div id='section1'>
                 {chart
                     &&
                     <>
-                        <OutlinedCard/>
-                        <div style={{display: 'flex', height: '5vh', width: '100%', justifyContent: 'center'}}>
-                            <div style={{marginRight: '5vw'}}>
-                                {/* <span>Cuwuuw</span> */}
-                                <Currency/>
-                            </div>
-                            <Tabs value={value} onChange={handleTabs}>
-                                <Tab label='Restaurants'/>
-                                <Tab label='Markets'/>
-                                <Tab label='Transportation'/>
-                                <Tab label='Rent'/>
-                                <Tab label='Apartments'/>
-                                <Tab label='Salary'/>
-                                <Tab label='Food'/>
-                            </Tabs>
-                        </div>
-                        <div style={{width: '90%'}}>
-                            <div style={{marginTop: '10vh'}}>
-                                {value === 0 ? <Chart/> : value === 1 ? <Chart2/> : value === 2 ?
-                                    <Chart3/> : value === 3 ? <Chart4/> : value === 4 ? <Chart5/> : value === 5 ?
-                                        <Chart6/> : <Chart7/>}
-                            </div>
-                            <div style={{display: 'flex', flexDirection: 'column', margin: '20vh'}}>
-                                <Chart8/>
-                                <p style={{display: 'flex', justifyContent: 'center'}}>
-                                    A cost-of-living index is a theoretical price index that measures relative cost of
-                                    living over time or regions. It is an index that measures differences in the price
-                                    of goods and services, and allows for substitutions with other items as prices
-                                    vary. </p>
-                            </div>
-                        </div>
+                        <div style={{margin: 30}}>
+                          <OutlinedCard/>
+                          <div style={{display: 'flex', height: '5vh', width: '100%', justifyContent: 'center'}}>
+                              <div style={{marginRight: '5vw'}}>
+                                  {/* <span>Cuwuuw</span> */}
+                                  <Currency/>
+                              </div>
+                              <Tabs value={value} onChange={handleTabs}>
+                                  <Tab label='Restaurants'/>
+                                  <Tab label='Markets'/>
+                                  <Tab label='Transportation'/>
+                                  <Tab label='Rent'/>
+                                  <Tab label='Apartments'/>
+                                  <Tab label='Salary'/>
+                                  <Tab label='Food'/>
+                              </Tabs>
+                          </div>
+                          <div style={{width: '90%'}}>
+                              <div style={{marginTop: '10vh'}}>
+                                  {value === 0 ? <Chart/> : value === 1 ? <Chart2/> : value === 2 ?
+                                      <Chart3/> : value === 3 ? <Chart4/> : value === 4 ? <Chart5/> : value === 5 ?
+                                          <Chart6/> : <Chart7/>}
+                              </div>
+                              <div style={{display: 'flex', flexDirection: 'column', margin: '20vh'}}>
+                                  <Chart8/>
+                                  <p style={{display: 'flex', justifyContent: 'center'}}>
+                                      A cost-of-living index is a theoretical price index that measures relative cost of
+                                      living over time or regions. It is an index that measures differences in the price
+                                      of goods and services, and allows for substitutions with other items as prices
+                                      vary. </p>
+                              </div>
+                          </div>
+                      </div>
                     </>
                 }
             </div>
-            {/*<BlogList/>*/}
             <Footer/>
         </>
 
