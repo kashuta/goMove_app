@@ -22,7 +22,8 @@ function App() {
             <div className="App">
                 <NavBar/>
                 <Routes>
-                    <Route path='/' element={<Home/>}/>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/menu/:country' element={<Home/>}/>
                     <Route path='/userprofile' element={<UserProfile/>}/>
                     <Route path='*' element={<Navigate to='/' replace/>}/>
                 </Routes>

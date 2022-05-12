@@ -78,6 +78,7 @@ class ApiData {
       res.sendStatus(400);
     }
   }
+
   async costLiving(req, res) {
     try {
       const currency = await axios(
@@ -94,12 +95,9 @@ class ApiData {
       res.sendStatus(400);
     }
   }
-
-
 }
 
 module.exports = new ApiData();
-
 
 // https://www.numbeo.com/api/currency_exchange_rates?api_key=${process.env.API_KEY_NUM}`
 // https://www.numbeo.com/api/rankings_by_city_current?api_key=omjk9aakst2wko§ion=1

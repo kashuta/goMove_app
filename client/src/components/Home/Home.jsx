@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {getCityFromDB} from '../../redux/thunk/thunkCity'
 
 import planeStyle from './Home.css'
 import InputCenter from '../InputCenter/InputCenter'
-import StaticGraph from '../StaticGraph/StaticGraph'
-import { Grid, Tabs, Tab} from "@mui/material";
+import {Tabs, Tab} from "@mui/material";
 
 import Chart from '../Chart/Chart'
 
@@ -22,6 +22,7 @@ import Footer from '../Footer/Footer'
 import BlogList from "../Blog/BlogList";
 import Chart7 from '../Chart7/Chart7'
 import Chart8 from '../Chart8/Chart8'
+import OutlinedCard from '../StaticGraph/StaticGraph'
 
 
 const divStyle = {
@@ -34,6 +35,9 @@ const divStyle = {
 }
 
 function Home() {
+   
+    const history = useSelector((state) => state.history)
+    const { country } = useParams()
     const price = useSelector((state) => state.price)
 
     const [value, setValue] = useState(0);
@@ -51,7 +55,11 @@ function Home() {
     useEffect(() => {
         setChart(!!price.length)
     }, [price])
-
+  
+    
+    const [find, setFind] = useState(history.find((el) => el.id == country))
+ 
+    console.log(find);
     return (
         <>
             <div style={divStyle}>
@@ -67,67 +75,38 @@ function Home() {
                     width: '100%'
                 }}>
                     <div style={{display: 'flex', justifyContent: 'center', marginTop: '25vh', position: 'relative', zIndex: '8'}}>
-                        <InputCenter />
+              <InputCenter find={ find }/>
                     </div>
                 </div>
             </div>
             <div id='section1' style={{margin: 30}}>
-                <Grid container>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <div style={{marginRight: '10px'}}>
-                            <StaticGraph/>
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <div style={{marginRight: '10px'}}>
-                            <StaticGraph/>
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <div style={{marginRight: '10px'}}>
-                            <StaticGraph/>
-                        </div>
-                    </Grid>
-                </Grid>
-
                 {chart
                     &&
                     <>
+                        <OutlinedCard />
                         <div style={{display: 'flex', height: '5vh', width: '100%', justifyContent: 'center'}}>
                             <div style={{marginRight: '5vw'}}>
                                 {/* <span>Cuwuuw</span> */}
                                 <Currency/>
                             </div>
                             <Tabs value={value} onChange={handleTabs}>
-                                <Tab label='Graph1' />
-                                <Tab label='Graph2' />
-                                <Tab label='Graph3' />
-                                <Tab label='Graph4' />
-                                <Tab label='Graph5' />
-                                <Tab label='Graph6' />
-                                <Tab label='Graph7' />
-                                <Tab label='Graph8' />
+                                <Tab label='Restaurants' />
+                                <Tab label='Markets' />
+                                <Tab label='Transportation' />
+                                <Tab label='Rent' />
+                                <Tab label='Apartments' />
+                                <Tab label='Salary' />
+                                <Tab label='Food' />
                             </Tabs>
                         </div>
                         <div style={{width: '90%'}}>
                             <div style={{marginTop: '10vh'}}>
                                 { value === 0 ? <Chart/> : value === 1 ? <Chart2/> : value === 2 ? <Chart3/> : value === 3 ? <Chart4/> : value === 4 ? <Chart5/> : value === 5 ? <Chart6/> : <Chart7/>}
                             </div>
-                            <div style={{marginTop: '10vh'}}>
+                            <div style={{display: 'flex', flexDirection: 'column', margin: '20vh'}}>
                                 <Chart8/>
+                                <p style={{display: 'flex', justifyContent: 'center'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. </p>
                             </div>
-                            {/* <div style={{marginTop: '10vh'}}>
-                                <Chart3/>
-                            </div>
-                            <div style={{marginTop: '10vh'}}>
-                                <Chart4/>
-                            </div>
-                            <div style={{marginTop: '10vh'}}>
-                                <Chart5/>
-                            </div>
-                            <div style={{marginTop: '10vh'}}>
-                                <Chart6/>
-                            </div> */}
                         </div>
                     </>
                 }

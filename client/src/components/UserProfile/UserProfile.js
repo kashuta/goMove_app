@@ -1,5 +1,6 @@
 import {createTheme, ThemeProvider} from "@mui/material/styles";
-import {Box, Button, Container, CssBaseline, Grid, TextField, Typography} from "@mui/material";
+import { Box, Button, Container, CssBaseline, Grid, TextField, Typography } from "@mui/material";
+import {Link} from 'react-router-dom';
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import './UserProfile.css'
@@ -9,7 +10,7 @@ import { getHistoryFromDB } from "../../redux/thunk/thunkHistory";
 const theme = createTheme();
 
 function UserProfile() {
-    const favorite = useSelector(state => state.history)
+    const history = useSelector(state => state.history)
     const id = useSelector(state => state.user.id);
     const dispatch = useDispatch();
     const userData = useSelector((store) => store.user);
@@ -35,7 +36,7 @@ function UserProfile() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(updateUser(inputs, id))
-    }
+  }
 
     return (
         <ThemeProvider theme={theme}>
@@ -110,9 +111,20 @@ function UserProfile() {
                     </div>
                 </Box>
         </Container>
-        <>
-          {favorite.filter((el) => el.userId === id).map((el) => <div>{el.cityBegin} - {el.cityEnd}</div>)}
-        </>
+        <div className="UserProfile__history_container">
+                       <h2>Your previous requests</h2>
+          {history.filter((el) => el.userId === id).map((el) => {
+            return (
+              <div className="UserProfile__history">
+                <Link to={`/menu/${el.id}`} style={{textDecoration: 'none'}}>
+                  {el.cityBegin} - {el.cityEnd}
+                </Link>
+                <Button sx={{color: "black"}}>Delete</Button>
+              </div>
+              
+            )
+          })}
+        </div>
         </ThemeProvider>
     );
 }
