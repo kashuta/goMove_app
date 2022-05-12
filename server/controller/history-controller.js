@@ -21,7 +21,8 @@ class HistoryController {
 
   async deleteHistory(req, res, next) {
     try {
-      const history = await historyService.deleteHistory(req.params.id);
+      await historyService.deleteHistory(req.params.id);
+      res.sendStatus(200);
     } catch (e) {
       next(e);
     }

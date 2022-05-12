@@ -20,7 +20,7 @@ class HistoryService {
   }
 
   async deleteHistory(id) {
-    const deleteCity = await City.destroy({ where: { id } });
+    await City.destroy({ where: { id } });
   }
 }
 

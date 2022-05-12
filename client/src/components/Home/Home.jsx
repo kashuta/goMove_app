@@ -59,7 +59,6 @@ function Home() {
     
     const [find, setFind] = useState(history.find((el) => el.id == country))
  
-    console.log(find);
     return (
         <>
             <div style={divStyle}>
