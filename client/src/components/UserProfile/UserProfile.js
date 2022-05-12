@@ -5,7 +5,7 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import './UserProfile.css'
 import { getUserData, updateUser } from "../../redux/thunk/thunkProfile";
-import { getHistoryFromDB } from "../../redux/thunk/thunkHistory";
+import { deleteHistory, getHistoryFromDB } from "../../redux/thunk/thunkHistory";
 
 const theme = createTheme();
 
@@ -36,6 +36,10 @@ function UserProfile() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(updateUser(inputs, id))
+  }
+
+  const removeHistoryHandler = (id) => {
+    dispatch(deleteHistory(id))
   }
 
     return (
@@ -119,7 +123,7 @@ function UserProfile() {
                 <Link to={`/menu/${el.id}`} style={{textDecoration: 'none'}}>
                   {el.cityBegin} - {el.cityEnd}
                 </Link>
-                <Button sx={{color: "black"}}>Delete</Button>
+                <Button data-id={el.id} onClick={(e) => removeHistoryHandler(e.target.dataset.id)}  sx={{color: "black"}}>Delete</Button>
               </div>
               
             )

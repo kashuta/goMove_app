@@ -1,5 +1,5 @@
 import {initState} from "../initState";
-import {ADD_HISTORY, GET_HISTORY} from "../types/histore.types";
+import {ADD_HISTORY, DELETE_HISTORY, GET_HISTORY} from "../types/histore.types";
 
 export const historyReducer = (state = initState, action) => {
 
@@ -8,7 +8,8 @@ export const historyReducer = (state = initState, action) => {
       return action.payload
     case ADD_HISTORY:
       return [...state.history, action.payload]
+    case DELETE_HISTORY:
+      return state.history.filter((el) => el.id !== action.payload)
     default: return state
   }
-
 }
