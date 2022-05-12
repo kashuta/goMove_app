@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: |
-          npm apiVersion: netwoking.k8s.io/v1
+          npm apiVersion: networking.k8s.io/v1
           kind: Ingress
           metadata:
             name: nodejs-ingress
