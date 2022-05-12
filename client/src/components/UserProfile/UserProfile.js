@@ -120,7 +120,7 @@ function UserProfile() {
           {history.filter((el) => el.userId === id).map((el) => {
             return (
               <div className="UserProfile__history">
-                <Link to={`/menu/${el.id}`} style={{textDecoration: 'none'}}>
+                <Link to={`/${el.id}`} style={{textDecoration: 'none'}}>
                   {el.cityBegin} - {el.cityEnd}
                 </Link>
                 <Button data-id={el.id} onClick={(e) => removeHistoryHandler(e.target.dataset.id)}  sx={{color: "black"}}>Delete</Button>

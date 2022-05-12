@@ -23,7 +23,7 @@ function App() {
                 <NavBar/>
                 <Routes>
                     <Route path='/' element={<Home />} />
-                    <Route path='/menu/:country' element={<Home/>}/>
+                    <Route path='/:country' element={<Home/>}/>
                     <Route path='/userprofile' element={<UserProfile/>}/>
                     <Route path='*' element={<Navigate to='/' replace/>}/>
                 </Routes>
