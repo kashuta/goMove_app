@@ -43,7 +43,7 @@ router.delete('/blog/:id', authMiddleware, blogController.deletePost);
 // history routes
 router.get('/history/:id', historyController.getAllHistory);
 router.post('/history', historyController.createHistory);
-router.delete('/history/:id', authMiddleware, historyController.deleteHistory);
+router.delete('/history/:id', historyController.deleteHistory);
 
 //comment routes
 router.post('/comment', authMiddleware, commentController.createComment);
