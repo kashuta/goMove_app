@@ -54,10 +54,10 @@ function Home() {
     useEffect(() => {
         setChart(!!price.length)
     }, [price])
-
-
-    const [find, setFind] = useState(history.find((el) => el.id == country))
-
+  
+    
+    const [find, setFind] = useState(history.find((el) => el.id === Number(country)))
+ 
     return (
         <>
             <div style={divStyle}>
