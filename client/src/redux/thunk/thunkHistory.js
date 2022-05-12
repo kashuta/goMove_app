@@ -7,7 +7,11 @@ export const getHistoryFromDB = () => async (dispatch) => {
 }
 
 export const addHistoryFromDB = (cityBegin, cityEnd, userId) => async (dispatch) => {
-  console.log(cityBegin, cityEnd, userId, '________');
   const response = await axios.post('http://localhost:5001/api/history', {cityBegin, cityEnd, userId})
   dispatch(ACTION_ADD_HISTORY(response.data))
+}
+
+export const deleteHistory = (id) => async (dispatch) => {
+  await axios.delete(`http://localhost:5001/api/history/${id}`)
+  dispatch(getHistoryFromDB())
 }
