@@ -22,6 +22,7 @@ import Footer from '../Footer/Footer'
 import Chart7 from '../Chart7/Chart7'
 import Chart8 from '../Chart8/Chart8'
 import OutlinedCard from '../StaticGraph/StaticGraph'
+import BlogList from '../Blog/BlogList'
 
 
 const divStyle = {
@@ -121,7 +122,7 @@ function Home() {
                     </>
                 }
             </div>
-            {/*<BlogList/>*/}
+            {/* <BlogList/> */}
             <Footer/>
         </>
 
