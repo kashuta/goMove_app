@@ -95,13 +95,12 @@ class UserController {
       const file = req.file.originalname;
       const userId = req.params.id;
       const { name, email } = req.body;
-      // const user = await userService.updateUser(userId, name, email, file);
-      const user = await User.update({ name, email, photo: file }, { where: { id: userId } });
+      await User.update({ name, email, photo: file }, { where: { id: userId } });
       const one = await User.findByPk(Number(userId));
       return res.json(one);
     } catch (err) {
       next(err);
-    }
+    } 
   }
 
   async uploadUserAvatar(req, res, next) {

@@ -59,7 +59,7 @@ function UserProfile() {
                     <div className='UserProfile__container'>
                         <div className="container col-md-4 mb-3 my-3">
                             <div className="card">
-                                <div className="d-flex flex-column align-items-center text-center my-3">
+                                <div className="user-card">
                                     <img
                                         src={inputs.photo ? `http://localhost:5001/img/${userData.photo}` :
                                             'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/b1/b12d371f6c55ed7306277b38b50f6642d13af030_full.jpg'}

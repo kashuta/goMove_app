@@ -125,10 +125,6 @@ function Home() {
                     </>
                 }
             </div>
-<<<<<<< HEAD
-            {/* <BlogList/> */}
-=======
->>>>>>> 2c988c62c5c47ecfb1de3e2be07561d6a8546804
             <Footer/>
         </>
 

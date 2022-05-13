@@ -1,6 +1,8 @@
 .UserProfile__container {
   display: flex;
-  width: 100vw;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 60vw;
   justify-content: center;
   gap: 35px;
 }
@@ -17,4 +19,17 @@
   display: flex;
   justify-content: space-between;
   width: 430px;
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px grey;
+  margin: 20px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+.user-card {
+  margin: 20px
 }

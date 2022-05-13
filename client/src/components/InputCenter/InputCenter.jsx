@@ -26,6 +26,8 @@ function InputCenter({find}) {
   
     const searchCity = () => {
         let new1 = data.split(',')
+        console.log(data);
+        console.log(new1);
         let cityFirst;
         let country;
         if (new1.length >= 3) {
