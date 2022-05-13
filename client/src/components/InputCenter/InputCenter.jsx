@@ -25,43 +25,41 @@ function InputCenter({find}) {
 
   
     const searchCity = () => {
+        console.log(data);
         let date = data.replace(/[A-Z]/g, ' $&').trim();
+        let dateCoorect = '';
         let new1 = date.split(',');
         let state = new1[1];
-        if (state.length === 4) {
-            state = state.replace(/\s/g, '');
-            new1[1] = state
+        console.log(typeof state);
+        if (state.length === 3) {
+            return state = state.split('').join('');
         }
+        console.log('123123123', state);
+        // const result = str.replace(/[A-Z]/g, ' $&').trim();
+        // let new1 = encodeURI(cityCountry);
         let cityFirst;
         let country;
         if (new1.length >= 3) {
-            cityFirst = `${new1[0]}, ${new1[1]}`
+            cityFirst = `${new1[0]},${new1[1]}`
             country = new1[2]
         } else {
             cityFirst = new1[0]
             country = new1[1]
         }
         let new2 = {city: cityFirst, country}
-        console.log('new2', new2);
 
-        let date2 = data2.replace(/[A-Z]/g, ' $&').trim();
-        let new3 = date2.split(',');
-        let state2 = new3[1];
-        if (state2.length === 4) {
-            state2 = state2.replace(/\s/g, '');
-            new3[1] = state2
-        }
+        let new3 = data2.split(',')
         let cityFirst1;
         let country1;
         if (new3.length >= 3) {
-            cityFirst1 = `${new3[0]}, ${new3[1]}`
+            cityFirst1 = `${new3[0]},${new3[1]}`
             country1 = new3[2]
         } else {
             cityFirst1 = new3[0]
             country1 = new3[1]
         }
 
-        let new4 = { city: cityFirst1, country: country1 }    
+        let new4 = { city: cityFirst1, country: country1 }        
         
         
         
