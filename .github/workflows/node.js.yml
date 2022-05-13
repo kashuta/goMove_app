@@ -1,0 +1,40 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node-@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: |
+          npm apiVersion: netwoking.k8s.io/v1
+          kind: Ingress
+          metadata:
+            name: nodejs-ingress
+            labels:
+              name: nodejs-ingress
+          spec:
+            rules:
+              - host: <HOST>
+                http:
+                  paths:
+                    - pathType: Prefix
+          path: /
+          npm install
+          cd client
+          npm install
+          npm run build
+          
+                          
+
+
