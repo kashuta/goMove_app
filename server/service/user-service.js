@@ -137,16 +137,6 @@ class UserService {
         return user;
     }
 
-    // async uploadUserAvatar(userId, file) {
-    //     const user = await User.findOne({where: {id: userId}});
-    //     if (!user) {
-    //         throw ApiError.badRequestError('User not found');
-    //     }
-    //     const fileName = await fileService.uploadFile(file);
-    //     user.avatar = fileName;
-    //     await user.save();
-    //     return user;
-    // }
 }
 
 module.exports = new UserService();
