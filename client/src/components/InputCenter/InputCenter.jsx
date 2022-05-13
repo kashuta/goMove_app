@@ -25,7 +25,18 @@ function InputCenter({find}) {
 
   
     const searchCity = () => {
-        let new1 = data.split(',')
+        console.log(data);
+        let date = data.replace(/[A-Z]/g, ' $&').trim();
+        let dateCoorect = '';
+        let new1 = date.split(',');
+        let state = new1[1];
+        console.log(typeof state);
+        if (state.length === 3) {
+            return state = state.split('').join('');
+        }
+        console.log('123123123', state);
+        // const result = str.replace(/[A-Z]/g, ' $&').trim();
+        // let new1 = encodeURI(cityCountry);
         let cityFirst;
         let country;
         if (new1.length >= 3) {
