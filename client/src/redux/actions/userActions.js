@@ -11,4 +11,3 @@ export const isAuth = () => ({type: IS_AUTH})
 export const isNotAuth = () => ({type: IS_NOT_AUTH})
 
 
-// Language: ecmascript 6

@@ -22,6 +22,7 @@ import Footer from '../Footer/Footer'
 import Chart7 from '../Chart7/Chart7'
 import Chart8 from '../Chart8/Chart8'
 import OutlinedCard from '../StaticGraph/StaticGraph'
+import BlogList from '../Blog/BlogList'
 
 
 const divStyle = {
@@ -64,7 +65,7 @@ function Home() {
             <div style={divStyle}>
                 <Header/>
                 <div className='scene'>
-                    <img src={plane} className='plane' style={planeStyle}></img>
+                    <img src={plane} className='plane' alt="foto" style={planeStyle}></img>
                 </div>
                 <div className='input-wrapper' style={{
                     display: 'flex',
