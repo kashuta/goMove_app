@@ -4,7 +4,7 @@
 
 # GoMove
 
-SPA for digital nomads that allows you to evaluate the selected country from different angles in relation to the current location.
+Are you a digital nomad considering a move to a new country? Or maybe you're just curious about what life would be like in another part of the world. Either way, you'll want to check out this new web application. It allows you to evaluate the selected country from different angles in relation to your current location. You can compare income, cost of living, internet cost, and more. So whether you're looking for a change of scenery or just want to do some armchair travel, this app is for you.
 
 
 ## Tech Stack
