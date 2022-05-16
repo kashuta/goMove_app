@@ -1,6 +1,6 @@
 ## UNDER CONSTRUCTION
 
-![Logo](https://i.ibb.co/nLBqCkQ/linkedin-banner-image-2.png)
+![Logo](<a href="https://ibb.co/Stxv1g9"><img src="https://i.ibb.co/LxPpqy2/cover-logo-github-gomove.png" alt="cover-logo-github-gomove" border="0"></a>)
 
 # GoMove
 
