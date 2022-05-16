@@ -1,6 +1,6 @@
 ## UNDER CONSTRUCTION
 
-![Logo](<a href="https://ibb.co/Stxv1g9"><img src="https://i.ibb.co/LxPpqy2/cover-logo-github-gomove.png" alt="cover-logo-github-gomove" border="0"></a>)
+<a style="text-align:center" href="https://gomove.artka.dev"><img src="https://i.ibb.co/LxPpqy2/cover-logo-github-gomove.png" alt="cover-logo-github-gomove" border="0"></a>
 
 # GoMove
 
